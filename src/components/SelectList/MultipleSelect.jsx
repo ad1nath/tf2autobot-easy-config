@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import List from "./List";
 import TagList from "./TagList";
 
-const MultipleSelect = ({ options, label, id, sendTags }) => {
+const MultipleSelect = ({ options, id, sendTags }) => {
   const [tags, setTags] = useState([]);
   const [value, setValue] = useState("");
   let optionsList = [];
@@ -92,7 +92,7 @@ const MultipleSelect = ({ options, label, id, sendTags }) => {
           />
         </ul>
         {options && (
-          <ul className="max-h-40  border border-slate-900 w-max py-1 absolute group-hover:visible shadow-md invisible  bg-gray-600 rounded-md overflow-y-auto scrollbar-thin scrollbar-thumb-slate-800 scrollbar-track-transparent scrollbar-thumb-rounded-md">
+          <ul className="max-h-40  border border-slate-900 w-max py-1 absolute group-focus-within:visible shadow-md invisible bg-gray-600 rounded-md overflow-y-auto scrollbar-thin scrollbar-thumb-slate-800 scrollbar-track-transparent scrollbar-thumb-rounded-md">
             {optionsList}
           </ul>
         )}
