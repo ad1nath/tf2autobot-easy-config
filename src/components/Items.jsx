@@ -17,6 +17,8 @@ const Items = ({ items, title, item_id }) => {
     const itemType = typeof items[item];
     const id = `${item_id || active}_${item}`;
     let type;
+    console.log(items[item]);
+
     itemType === "string" || items[item].length === 0
       ? (type = "text")
       : itemType === "boolean"
@@ -36,7 +38,7 @@ const Items = ({ items, title, item_id }) => {
           value={items[item]}
           id={id}
           isList={itemType === "object" && items[item].length === 0}
-          isChecked={type === "checkbox" ? !!items[item] : false}
+          isChecked={type === "checkbox" && items[item]}
         />
       );
     }
