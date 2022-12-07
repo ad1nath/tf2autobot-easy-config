@@ -18,32 +18,10 @@ const Input = ({ type, label, value, id, isChecked, isList, description }) => {
     navigator.clipboard.writeText(copiedData);
   };
 
-  // sets value when multiple select input changes
-  useEffect(() => {
-    setCopiedData(`!config ${id.replaceAll("_", ".")}=${JSON.stringify(tags)}`);
-    dispatch(
-      optionActions.editOption({
-        optionValue: tags,
-        optionKeys: id,
-      })
-    );
-  }, [tags]);
-
-  useEffect(() => {
-    setCopiedData(`!config ${id.replaceAll("_", ".")}=${selected}`);
-    dispatch(
-      optionActions.editOption({
-        optionValue: selected,
-        optionKeys: id,
-      })
-    );
-  }, [selected]);
-  // sets copiedData value to default when new hovering on new item
   useEffect(() => {
     setCopiedData(`!config ${id.replaceAll("_", ".")}=${value}`);
   }, [id]);
 
-  // function to handle changes in text and checkbox
   const handleChange = (event) => {
     let inputValue = event.target.value;
     if (event.target.type === "number") {
@@ -61,18 +39,33 @@ const Input = ({ type, label, value, id, isChecked, isList, description }) => {
     );
   };
 
-  //this functions current description
+  //this functions sets current description
   const handleEnter = () => {
     dispatch(optionActions.setCurrentDescription({ id, description }));
   };
+
   //function to get tags from the createList component
   const handleTags = (data) => {
     setTags(data);
+    setCopiedData(`!config ${id.replaceAll("_", ".")}=${JSON.stringify(data)}`);
+    dispatch(
+      optionActions.editOption({
+        optionValue: data,
+        optionKeys: id,
+      })
+    );
   };
 
   //gets data from select component and sets it to copied data and updates edited options
   const handleSelect = (data) => {
     setSelected(data);
+    setCopiedData(`!config ${id.replaceAll("_", ".")}=${data}`);
+    dispatch(
+      optionActions.editOption({
+        optionValue: data,
+        optionKeys: id,
+      })
+    );
   };
 
   return (
