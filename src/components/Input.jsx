@@ -65,7 +65,7 @@ const Input = ({ type, label, value, id, isChecked, isList, description }) => {
   };
 
   return (
-    <div
+    <li
       className="p-1 flex my-1 flex-wrap align-middle group/option"
       onMouseEnter={handleEnter}
     >
@@ -121,7 +121,7 @@ const Input = ({ type, label, value, id, isChecked, isList, description }) => {
           sendSelected={handleSelect}
         />
       )}
-    </div>
+    </li>
   );
 };
 
