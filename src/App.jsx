@@ -32,7 +32,9 @@ function App() {
   return (
     <>
       <header className="p-5  bg-slate-900 flex justify-between">
-        <h1 className=" text-lime-500 text-xl">Tf2autobot EasyConfig</h1>
+        <h1 className=" text-lime-100 font-semibold text-xl">
+          TF2Autobot EasyConfig
+        </h1>
         <DownloadButton />
       </header>
       <Navigate />
@@ -47,7 +49,7 @@ function App() {
           className="  shadow-black shadow-2xl
         md:p-10 p-2 md:w-2/5 w-full bg-slate-800 rounded-lg my-3 min-h-screen"
         >
-          <h2 className="text-xl font-medium  p-5 rounded-lg bg-slate-900 text-lime-500 hidden md:block ">
+          <h2 className="text-xl font-medium p-5 rounded-lg bg-slate-900 text-lime-500 hidden md:block ">
             {toLabel(active)}
           </h2>
           <Items />
