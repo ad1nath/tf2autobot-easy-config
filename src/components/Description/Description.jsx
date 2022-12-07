@@ -6,7 +6,11 @@ const Description = () => {
     (state) => state.options.currentDescription
   );
   const currentPath = useSelector((state) => state.options.currentPath);
-  let content = <p>Hover on the property to get a brief description</p>;
+  let content = (
+    <p className="p-2 bg-slate-600 rounded-lg text-slate-100">
+      Hover on a property to get a brief description
+    </p>
+  );
   if (currentDescription) {
     content = (
       <div className="text-slate-200">
@@ -28,7 +32,9 @@ const Description = () => {
         <div className="mb-2">
           <h3 className="font-bold text-slate-100 ">Details</h3>
           <p className=" text-slate-200 bg-slate-700 shadow-inner p-2 leading-7 lg:text-md rounded-md">
-            {currentDescription.details}
+            {currentDescription.details.length === 0
+              ? "No description available."
+              : currentDescription.details}
           </p>
         </div>
         {currentDescription.note && (
@@ -67,9 +73,11 @@ const Description = () => {
 
   return (
     <>
-      <h2 className="font-bold p-3 rounded-lg bg-gray-700 text-lime-400 ">
-        {currentPath.replaceAll("_", " . ")}
-      </h2>
+      {currentPath && (
+        <h2 className="font-bold p-3 rounded-lg bg-gray-700 text-lime-400 ">
+          {currentPath.replaceAll("_", " . ")}
+        </h2>
+      )}
       {content}
     </>
   );

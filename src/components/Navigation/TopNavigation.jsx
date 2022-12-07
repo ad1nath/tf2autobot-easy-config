@@ -8,7 +8,7 @@ import { optionActions } from "../../store/options-ctx";
 const Navigate = () => {
   const [show, setShow] = useState(false);
   const options = useSelector((state) => state.options.options);
-  const keyList = useMemo(() => Object.keys(options), [options]);
+  const keyList = Object.keys(options);
   const [current, setCurrent] = useState(0);
   const dispatch = useDispatch();
   const lastKey = keyList.length - 1;

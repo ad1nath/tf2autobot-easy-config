@@ -31,8 +31,8 @@ function App() {
 
   return (
     <>
-      <header className="p-5  bg-slate-900 flex justify-between  ">
-        <h1 className=" text-lime-500 text-xl">Tf2auto EasyConfig</h1>
+      <header className="p-5  bg-slate-900 flex justify-between">
+        <h1 className=" text-lime-500 text-xl">Tf2autobot EasyConfig</h1>
         <DownloadButton />
       </header>
       <Navigate />
