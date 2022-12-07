@@ -32,7 +32,7 @@ function App() {
   return (
     <>
       <header className="p-5  bg-slate-900 flex justify-between">
-        <h1 className=" text-lime-100 font-semibold text-xl">
+        <h1 className=" text-slate-100 font-semibold text-xl">
           TF2Autobot EasyConfig
         </h1>
         <DownloadButton />
