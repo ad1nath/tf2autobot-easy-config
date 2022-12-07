@@ -8,8 +8,6 @@ import CopyButton from "./CopyButton";
 
 const Input = ({ type, label, value, id, isChecked, isList, description }) => {
   const [copiedData, setCopiedData] = useState("");
-  const [tags, setTags] = useState("");
-  const [selected, setSelected] = useState("");
   const dispatch = useDispatch();
   const keyValue = description ? description["keyvalues"] : null;
 
@@ -46,7 +44,6 @@ const Input = ({ type, label, value, id, isChecked, isList, description }) => {
 
   //function to get tags from the createList component
   const handleTags = (data) => {
-    setTags(data);
     setCopiedData(`!config ${id.replaceAll("_", ".")}=${JSON.stringify(data)}`);
     dispatch(
       optionActions.editOption({
@@ -58,7 +55,6 @@ const Input = ({ type, label, value, id, isChecked, isList, description }) => {
 
   //gets data from select component and sets it to copied data and updates edited options
   const handleSelect = (data) => {
-    setSelected(data);
     setCopiedData(`!config ${id.replaceAll("_", ".")}=${data}`);
     dispatch(
       optionActions.editOption({
