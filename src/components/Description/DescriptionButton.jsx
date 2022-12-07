@@ -10,6 +10,7 @@ const DescriptionButton = ({ externalClasses }) => {
       onClick={() => {
         dispatch(optionActions.toggleDescriptionBox());
       }}
+      aria-label="show description"
     >
       <QuestionMarkCircleIcon className="h-5 w-5 text-white" />
     </button>

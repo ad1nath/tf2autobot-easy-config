@@ -45,13 +45,13 @@ const Items = ({ items, title, item_id }) => {
   return (
     <>
       {title && (
-        <h3
+        <h2
           className=" my-1.5 mt-2 p-1 pl-2  font-[500]   
         rounded-t-lg from-slate-900  shadow-slate-900  bg-gradient-to-r shadow-sm   text-lime-400
         "
         >
           {toLabel(title)}
-        </h3>
+        </h2>
       )}
       <ul className="pl-4 md:pl-6 shadow-slate-900 shadow-md  rounded-b-2xl  pb-2">
         {itemList}
