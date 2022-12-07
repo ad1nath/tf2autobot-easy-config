@@ -17,7 +17,6 @@ const Items = ({ items, title, item_id }) => {
     const itemType = typeof items[item];
     const id = `${item_id || active}_${item}`;
     let type;
-    console.log(items[item]);
 
     itemType === "string" || items[item].length === 0
       ? (type = "text")
