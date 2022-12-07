@@ -1,0 +1,3719 @@
+{
+    "miscSettings": {
+        "showOnlyMetal": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If this is set to false, the bot will show all prices in the format of [x keys, y ref]. Example: (5 keys, 10 ref). If this is set to true the bot will instead show all prices in the format of [x ref].",
+                "note":"",
+                "parameters":"",
+                "example":"(260 ref)"
+            }}
+        },
+        "sortInventory": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false your bot will not automatically sort its own inventory.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "type": {"description":  {
+                "type": "number",
+                "default": "Rarity",
+                "details": "By default, your bot will sort inventory by rarity.",
+                "note":"",
+                "keyvalues":[
+                    {"name": "Name", "value": 1},
+                    {"name": "Defindex", "value": 2},
+                    {"name": "Rarity", "value": 3},
+                    {"name": "Type", "value": 4},
+                    {"name": "Date", "value": 4},
+                    {"name": "Class", "value": 101},
+                    {"name": "Slot", "value": 102}
+                ],
+                "example":""
+            }}
+        },
+        "createListings": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false, your bot will not list items for trade while it is running (if changed while your bot is running, this wont work unless restarted).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "addFriends": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false, your bot will not allow others to add it as a Steam friend (except admins). FALSE IS NOT RECOMMENDED!",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "sendGroupInvite": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false, your bot will not invite people to join Steam groups.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "counterOffer": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "By default, your bot will automatically attempt to counter an offer with only 🟥_INVALID_VALUE error/reason",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "skipIncludeMessage": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, if someone sent an offer with incorrect value but they include offer message, the offer will not be automatically countered but will skip for your review instead.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "skipItemsInTrade": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "By default, when your bot is constructing an offer (trade partner buy/sell through command), your bot will skip any items that are currently in another active trades. Set this to false if you want to disable this feature.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "weaponsAsCurrency": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false, your bot will not value craft/uncraft weapons as currency (0.05 refined).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "withUncraft": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false, your bot will exclude uncraft weapons as currency (0.05 refined).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "checkUses": {
+            "duel": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "f set to false, your bot will buy Dueling Mini-Games regardless of how many uses are left. Otherwise, it will only accept full Dueling Mini-Games (5 uses left).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "noiseMaker": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false, your bot will buy Noise Makers regardless of how many uses are left. Otherwise, it will only accept full Noise Makers (25 uses left).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "game": {
+            "playOnlyTF2": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "Set to true if you want your bot to only play Team Fortress 2. Setting this to true will ignore the below Option.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customName": {"description":  {
+                "type": "string",
+                "default": "",
+                "details": "Name of the custom game you'd like your bot to play. Limited to only 60 characters",
+                "note":"",
+                "parameters":"",
+                "example":"https://i.gyazo.com/308e4e05bf4c49929520df4e0064864c.png"
+            }}
+        },
+        "alwaysRemoveItemAttributes": {
+            "customTexture": {
+                "enable": {
+                    "description":  {
+                        "type": "boolean",
+                        "default": "true",
+                        "details": "Set to false if you don't want your bot to remove any custom texture (or image) applied to the decalable items (Conscientious Objector, Clan Pride, Photo Badge, Flair!).",
+                        "note":"",
+                        "parameters":"",
+                        "example":""
+                    }
+                }
+            }
+        },
+        "deleteUntradableJunk": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, your bot will automatically check if seasonal items exists in your bot inventory and delete them on start",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "reputationCheck": {
+            "checkMptfBanned": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "This is especially for Marketplace.tf whitelisted sellers, which stated in the Seller Terms & Conditions that 'You will not trade with MarketplaceTF banned users, including any bots they may own'.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "reptfAsPrimarySource": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "Set this to true if you want your bot to get reputation data from rep.tf",
+                "note":"rep.tf has been quite slow nowadays, so it's recommended to always set this to false. If you set the .checkMptfBanned to true and this to false, please make sure to fill in the MPTF_API_KEY in your enviromental file.",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "pricecheckAfterTrade": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set this to true if you want your bot to autoprice manually priced items once they are sold.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        }
+    },
+    "sendAlert": {
+        "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false to never send any alerts.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "autokeys": {
+            "lowPure": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "(Discord Webhook not mentioned) Send an alert when the bot is low in keys and ref (less than minimum for both).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "failedToAdd": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "(Discord Webhook mentioned) Send an alert when the bot failed to add key (when Autokeys is enabled).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "failedToUpdate": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "(Discord Webhook mentioned) Send an alert when the bot failed to update key (when Autokeys is enabled).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "failedToDisable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "(Discord Webhook mentioned) Send an alert when the bot failed to disable key (when Autokeys is enabled).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "backpackFull": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "(Discord Webhook not mentioned) Send an alert when the bot failed to send an offer due to full backpack problem.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "highValue": {
+            "gotDisabled": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "(Discord Webhook mentioned) Send an alert when the bot successfully bought an item with high-value attachment(s) and it got disabled (only if highValue.enableHold is true).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "receivedNotInPricelist": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "(Discord Webhook mentioned) Send an alert when the bot successfully bought an item (INVALID_ITEMS) with high-value attachment(s) - this will not automatically added to the pricelist.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "tryingToTake": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "(Discord Webhook mentioned) Send an alert when the trade partner is trying to take an item with high-value attachment(s) that is still not in the bot pricelist.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "autoRemoveIntentSellFailed": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "(Discord Webhook mentioned) Send an alert when an item is sold with intent sell, and pricelist.autoRemoveIntentSell.enable is true but the bot failed to remove it.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "autoRemoveAssetidFailed": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Send an alert when the bot failed to remove assetid in pricelist when the item has been sold.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "autoRemoveAssetidSuccess": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Send an alert when the bot successfully remove assetid in pricelist when the item has been sold.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "autoUpdateAssetid": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Send an alert when the assetid in the pricelist has been updated (due to Steam error, etc).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "autoResetToAutopriceOnceSold": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Send an alert when a manually priced items (bank) has been reset to autoprice once its been sold.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "autoAddPaintedItems": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "(Discord Webhook mentioned if failed) Send an alert when painted items has been successfully added to sell",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "failedAccept": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "(Discord Webhook mentioned) Send an alert when the bot failed to accept an offer",
+                "note":"",
+                "parameters":"",
+                "example":"https://user-images.githubusercontent.com/47635037/109648983-3d60d880-7b96-11eb-9ef7-d1d9fb16f1de.png"
+            }},
+        "unableToProcessOffer": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Discord Webhook mentioned) Send an alert when the bot failed to process an offer due to the broken offer data. The bot will retry but itself, but this is just to inform you if that happened.",
+                "note":"",
+                "parameters":"",
+                "example":"https://user-images.githubusercontent.com/47635037/109649238-97619e00-7b96-11eb-994b-694f24ac2f0d.png"
+            }},
+        "partialPrice": {
+            "onUpdate": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "(Discord Webhook not mentioned) Send an alert when the bot partially update item prices.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "onSuccessUpdatePartialPriced": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "(Discord Webhook not mentioned) Send an alert when the bot successfully update the prices for previously partially updated prices.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "onFailedUpdatePartialPriced": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "(Discord Webhook not mentioned) Send an alert when the bot failed to update the prices for previously partially updated prices.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "onBulkUpdatePartialPriced": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "(Discord Webhook not mentioned) Send an alert when the bot updates many partial priced items at once.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "onResetAfterThreshold": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "(Discord Webhook not mentioned) Send an alert when the threshold for partialPriceUpdate exipres and the pricing goes back to normal.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "receivedUnusualNotInPricelist": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "(Discord Webhook mentioned) Send an alert when the bot received Unusual (probably because your bot bought one from Generic Unusual buy order that is not in the pricelist - Only if you set pricelist.autoAddInvalidUnusual.enable to false",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "failedToUpdateOldPrices": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Send an alert when the bot fails to update an old price. This can happen when using a custom autopricer.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+    },
+    "pricelist": {
+        "partialPriceUpdate": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "By default, this feature is disabled",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "thresholdInSeconds": {"description":  {
+                "type": "number",
+                "default": "604800",
+                "details": "Default value is 7 days. Minimum you can set here is only 1 day (86400 seconds).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "excludeSKU": {"description":  {
+                "type": "list",
+                "default": "[ ]",
+                "details": "By default, this value is an empty string, but Mann Co. Supply Crate Key will always excluded.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "filterCantAfford": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "By default, your bot will list all items in the pricelist.",
+                "note":"this feature will only do its job every 30 minutes IF the missing OR re-adding items is less than 1000 items, otherwise, it will do this job again after 60 minutes.",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "autoResetToAutopriceOnceSold": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "By default, any item with intent bank in the pricelist will not be automatically reset to autoprice once it's sold Set this to true to enable this feature.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "autoRemoveIntentSell": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "By default, any item with intent sell in the pricelist will be automatically removed when the bot no longer have that item. Set to false to disable this feature.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "autoAddInvalidItems": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false, any accepted 🟨_INVALID_ITEMS will NOT be automatically added to the pricelist.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "autoAddInvalidUnusual": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, any accepted Unusual bought from Generic Unusual Buy Order will automatically be added to the pricelist (if the prices from prices.tf are available).",
+                "note":"If the bot accepts an Unusual item that is not on the price list it will not put it back up for sale unless autoAddInvalidUnusual is set to true. The option is set to false by default to protect users who use the generic price SKU and unaware that autoAddInvalidItems would sell off anything purchased via that generic sku.",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "autoAddPaintedItems": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false, any accepted items with painted will not be automatically added to the pricelist (to sell only). This feature only available if your normalize.painted.our is true and normalize.painted.their is false. The bot will set the price to sell by adding the item's base autoprice selling price and additional price for paint, in which you should also set your preferred additional price for each paint in detailExtra.painted[paintName].price.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "priceAge": {
+            "maxInSeconds": {"description":  {
+                "type": "number",
+                "default": "28800",
+                "details": "(8 hrs) If an item in the pricelist's last price update exceeds this value, the bot will automatically request a price check for the item from prices.tf (only apply on boot).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        }
+    },
+    "bypass": {
+        "escrow": {
+            "allow": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, your bot will allow trades to be held for up to 15 days as a result of the trade partner not having Mobile Authentication enabled.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "overpay": {
+            "allow": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "By default, your bot will allow trade partners to overpay with items or keys/metal (our value more than their value). Set this to false if you want your bot to decline any trades in which it would receive overpay.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "giftWithoutMessage": {
+            "allow": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true (Not recommended), your bot will accept any gift without the need for the trade partner to include a gift message in the offer message.",
+                "note":"Allowed gift messages: 'gift', 'donat' (So that 'donate' or 'donation' will also be accepted), 'tip' (All others are synonyms), 'tribute', 'souvenir', 'favor', 'giveaway', 'bonus', 'grant', 'bounty', 'present', 'contribution', 'award', 'nice' ,'happy', 'thank', 'goo' (For 'good', 'goodie'), 'awesome','rep', 'joy', 'cute'",
+                "parameters":"",
+                "example":""
+            }}
+        }
+    },
+    "tradeSummary": {
+        "declinedTrade": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "By default declined trades will not be sent to your steam chat / discord webhook.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "showStockChanges": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "By default the summary will NOT include to show stock changes.",
+                "note":"",
+                "parameters":"",
+                "example":"B.M.O.C (0 → 1/1)"
+            }},
+        "showTimeTakenInMS": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "Set to true if you want to include time taken to complete the trade in milliseconds.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "showDetailedTimeTaken": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to `false if you don't want to see the detailed time taken.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "showItemPrices": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if you don't want to include item prices (buying/selling prices).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "showPureInEmoji": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "[Discord Webhook only] Enable to show keys and metal emojies",
+                "note":"You will also need to enable 'use external emoji' permissions on your trade summary channel in discord",
+                "parameters":"",
+                "example":"https://user-images.githubusercontent.com/47635037/107742639-6554dd00-6d4a-11eb-8a64-fa9d81b2d8cc.png"
+            }},
+        "showProperName": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "Set to true if you want the item name to be shown with 'The' (if the item proper_name property in schema is set to true) and full name (will not shorten 'Non-Craftable' to 'NC' for example).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "showOfferMessage": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "Set to true if you want to include offer message in the trade summary.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "customText": {
+            "description":  {
+                "type": "string",
+                "default": "",
+                "details": "Set your own preferred customizable text in the trade summary (both accepted and review summary).",
+                "note":"check example for Discord Webhook markdown (formatting)",
+                "parameters":"",
+                "example":"https://birdie0.github.io/discord-webhooks-guide/img/other/discord_markdown.png"
+            },
+            "summary": {
+                "steamChat": "Summary",
+                "discordWebhook": "__**Summary**__"
+            },
+            "asked": {
+                "steamChat": "• Asked:",
+                "discordWebhook": "**• Asked:**"
+            },
+            "offered": {
+                "steamChat": "• Offered:",
+                "discordWebhook": "**• Offered:**"
+            },
+            "offerMessage": {
+                "steamChat": "💬 Offer message:",
+                "discordWebhook": "💬 **Offer message:**"
+            },
+            "profitFromOverpay": {
+                "steamChat": "📈 Profit from overpay:",
+                "discordWebhook": "📈 ***Profit from overpay:***"
+            },
+            "lossFromUnderpay": {
+                "steamChat": "📉 Loss from underpay:",
+                "discordWebhook": "📉 ***Loss from underpay:***"
+            },
+            "timeTaken": {
+                "steamChat": "⏱ Time taken:",
+                "discordWebhook": "⏱ **Time taken:**"
+            },
+            "keyRate": {
+                "steamChat": "🔑 Key rate:",
+                "discordWebhook": "🔑 Key rate:"
+            },
+            "pureStock": {
+                "steamChat": "💰 Pure stock:",
+                "discordWebhook": "💰 Pure stock:"
+            },
+            "totalItems": {
+                "steamChat": "🎒 Total items:",
+                "discordWebhook": "🎒 Total items:"
+            },
+            "spells": "🎃 Spells:",
+            "strangeParts": "🎰 Parts:",
+            "killstreaker": "🔥 Killstreaker:",
+            "sheen": "✨ Sheen:",
+            "painted": "🎨 Painted:"
+        }
+    },
+    "steamChat": {
+        "customInitializer": {
+            "description":  {
+                "type": "string",
+                "default": "",
+                "details": "Set your own preferred initializer.",
+                "note":"",
+                "parameters":["leave empty - normal text","/me", "/pre","/quote", "/code"],
+                "example":""
+            },
+            "acceptedTradeSummary": "/me",
+            "declinedTradeSummary": "/me",
+            "review": "",
+            "message": {
+                "onReceive": "/quote",
+                "toOtherAdmins": "/quote"
+            }
+        },
+        "notifyTradePartner": {
+            "onSuccessAccepted": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Send notification to the trade partner when the trade was completed.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "onSuccessAcceptedEscrow": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Send notification to the trade partner when the trade was accepted but on hold due to trade hold.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "onDeclined": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Send notification to the trade partner when the trade was declined.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "onCancelled": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Send notification to the trade partner when the trade was canceled due to a problem with Steam, or canceled by user.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "onTradedAway": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Send notification to the trade partner when the trade was invalid because some of the items were traded away.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "onOfferForReview": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Send notification to the trade partner when the trade is under review",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        }
+    },
+    "highValue": {
+        "enableHold": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "By default, whenever your bot accepts items with high valued attachments, it will temporarily be disabled so you can decide whether to manually price it. Set this to false if you want to disable this feature.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "retainOldGroup": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "By default, the item group will be automatically updated to highValue. Set this to true if you want the bot to not change the item group.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "customGroup": {"description":  {
+            "type": "string",
+            "default": "highValue",
+            "details": "If you don't like the default highValue group, you can change it here.",
+            "note":"",
+            "parameters":"",
+            "example":""
+        }},
+        "description":  {
+            "type": "list",
+            "default": "[ ]",
+            "details": "An array of full or partial sku that you want to make an exception for it to not be considered as high-value. Example: ;5;u - this is a partial sku for all Unusual - useful if you want to ignore high valued Unusual cosmetic.",
+            "note":"All must be the exact match. Please refer to the valid names (not the partial sku listed in the references). If left empty ([]), then everything in the reference will be considered high-value. If you want to ignore all [spells/sheens/killstreakers/strange parts/painted] as high-value, you can put anything that does not match the [Ditto] name, for example: None",
+            "parameters":"",
+            "example":""
+        },
+        "spells": {
+            "names": {"description":  {
+                "type": "list",
+                "default": "[ ]",
+                "details": "An array of spells. Must be the spells full name in each element.",
+                "note":"",
+                "options":["Team Spirit Footprints",
+                "Gangreen Footprints",
+                "Corpse Gray Footprints",
+                "Violent Violet Footprints",
+                "Rotten Orange Footprints",
+                "Bruised Purple Footprints",
+                "Headless Horseshoes",
+                "Putrescent Pigmentation",
+                "Die Job",
+                "Chromatic Corruption",
+                "Spectral Spectrum",
+                "Sinister Staining",
+                "Voices From Below",
+                "Exorcism",
+                "Pumpkin Bombs",
+                "Halloween Fire"],
+                "example":""
+            }},
+            "exceptionSkus": "[ ]"
+        },
+        "sheens": {
+            "names": {"description":  {
+                "type": "list",
+                "default": "[ ]",
+                "details": "An array of sheens. Must be the sheens full name in each element. ",
+                "note":"",
+                "options": [
+                    "Team Shine",
+                    "Deadly Daffodil",
+                    "Manndarin",
+                    "Mean Green",
+                    "Agonizing Emerald",
+                    "Villainous Violet",
+                    "Hot Rod"
+                ],
+                "example":""
+            }},
+            "exceptionSkus": "[ ]"
+        },
+        "killstreakers": {
+            "names": {"description":  {
+                "type": "list",
+                "default": "[ ]",
+                "details": "An array of killstreakers. Must be the killstreakers full name in each element.",
+                "note":"",
+                "options":[
+                    "Fire Horns",
+                    "Cerebral Discharge",
+                    "Tornado",
+                    "Flames",
+                    "Singularity",
+                    "Incinerator",
+                    "Hypno-Beam"
+                ],
+                "example":""
+            }},
+            "exceptionSkus": "[ ]"
+        },
+        "strangeParts": {
+            "names": {"description":  {
+                "type": "list",
+                "default": "[ ]",
+                "details": "An array of strange parts. Must be the strange parts full name in each element. ",
+                "note":"",
+                "options":["Scouts Killed",
+                "Snipers Killed",
+                "Soldiers Killed",
+                "Demomen Killed",
+                "Heavies Killed",
+                "Pyros Killed",
+                "Spies Killed",
+                "Engineers Killed",
+                "Medics Killed",
+                "Buildings Destroyed",
+                "Projectiles Reflected",
+                "Headshot Kills",
+                "Airborne Enemy Kills",
+                "Gib Kills",
+                "Kills Under A Full Moon",
+                "Dominations",
+                "Revenges",
+                "Posthumous Kills",
+                "Teammates Extinguished",
+                "Critical Kills",
+                "Kills While Explosive-Jumping",
+                "Sappers Removed",
+                "Cloaked Spies Killed",
+                "Medics Killed That Have Full ÜberCharge",
+                "Robots Destroyed",
+                "Giant Robots Destroyed",
+                "Kills While Low Health",
+                "Kills During Halloween",
+                "Robots Killed During Halloween",
+                "Defenders Killed",
+                "Submerged Enemy Kills",
+                "Kills While Invuln ÜberCharged",
+                "Tanks Destroyed",
+                "Long-Distance Kills",
+                "Robot Spies Destroyed",
+                "Kills During Victory Time",
+                "Robot Scouts Destroyed",
+                "Taunt Kills",
+                "Unusual-Wearing Player Kills",
+                "Burning Player Kills",
+                "Killstreaks Ended",
+                "Freezecam Taunt Appearances",
+                "Damage Dealt",
+                "Fires Survived",
+                "Allied Healing Done",
+                "Point Blank Kills",
+                "Kills",
+                "Full Health Kills",
+                "Taunting Player Kills",
+                "Not Crit nor MiniCrit Kills",
+                "Players Hit", 
+                "Assists"],
+                "example":""
+            }},
+            "exceptionSkus": "[ ]"
+        },
+        "painted": {
+            "names": {"description":  {
+                "type": "list",
+                "default": "[ ]",
+                "details": "An array of paints. Must be the paints full name in each element.",
+                "note":"",
+                "options": ["A Color Similar to Slate",
+                "A Deep Commitment to Purple",
+                "A Distinctive Lack of Hue",
+                "A Mann's Mint",
+                "After Eight",
+                "Aged Moustache Grey",
+                "An Extraordinary Abundance of Tinge",
+                "Australium Gold",
+                "Color No. 216-190-216",
+                "Dark Salmon Injustice",
+                "Drably Olive",
+                "Indubitably Green",
+                "Mann Co. Orange",
+                "Muskelmannbraun",
+                "Noble Hatter's Violet",
+                "Peculiarly Drab Tincture",
+                "Pink as Hell",
+                "Radigan Conagher Brown",
+                "The Bitter Taste of Defeat and Lime",
+                "The Color of a Gentlemann's Business Pants",
+                "Ye Olde Rustic Colour",
+                "Zepheniah's Greed",
+                "An Air of Debonair",
+                "Balaclavas Are Forever",
+                "Cream Spirit",
+                "Operator's Overalls",
+                "Team Spirit",
+                "The Value of Teamwork",
+                "Waterlogged Lab Coat"],
+                "example":""
+            }},
+            "exceptionSkus": "[ ]"
+        }
+    },
+    "normalize": {
+        "festivized": {
+            "our": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, bot will recognize our Festivized items as Non-Festivized variant.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "their": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, bot will recognize trade partner's Festivized items as Non-Festivized variant.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "amountIncludeNonFestivized": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "Enabling this option will take the non-festivzed version of an item into account when creating buy/sell orders.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "strangeAsSecondQuality": {
+            "our": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, your bot will recognize any of your Strange Unique, Strange Haunted or Strange Unusual as Unique, Haunted and Unusual only (ignore ;strange part on item's sku).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "their": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, your bot will recognize trade partner's Strange Unique, Strange Haunted or Strange Unusual as Unique, Haunted and Unusual only (ignore ;strange part on item's sku).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "amountIncludeNonStrange": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "Enabling this option will take the non-strange version of an item into account when creating buy/sell orders. ",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "painted": {
+            "our": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false, bot will assign painted partial sku on our painted items. Meaning that you'll be able to create a separate listing (sell order only) for the painted items. Note that only paint(s) listed in highValue.painted will have painted partial sku assigned on that particular item (if you leave it as an empty array ([]), then all painted items will have painted partial sku assigned).",
+                "note":"Creating listings for painted items on backpack.tf is currently NOT SUPPORTED for BUY ORDERS (unless you manually create it). Also note that, if your .our is false and .their is true, if you created a buy order for an item (without partial painted sku of course, max set to 1), then someone sent an offer containing painted item and that paint is listed in highValue.painted, the trade summary will show stock changes like this: -1 → 0. Meaning your buy order will not get removed because your bot has an item with partial painted sku on it (treated as a different item). It will be removed once your bot received a non-painted version (or painted that not in highValue.painted) of that particular item.",
+                "parameters":"",
+                "example":""
+            }},
+            "their": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false, your bot will assign painted partial sku on trade partner's painted items (false is not recommended on trade partner's side).",
+                "note":"Creating listings for painted items on backpack.tf is currently NOT SUPPORTED for BUY ORDERS (unless you manually create it). Also note that, if your .our is false and .their is true, if you created a buy order for an item (without partial painted sku of course, max set to 1), then someone sent an offer containing painted item and that paint is listed in highValue.painted, the trade summary will show stock changes like this: -1 → 0. Meaning your buy order will not get removed because your bot has an item with partial painted sku on it (treated as a different item). It will be removed once your bot received a non-painted version (or painted that not in highValue.painted) of that particular item.",
+                "parameters":"",
+                "example":""
+            }},
+            "amountIncludeNonPainted": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "Enabling this option will take the non-painted version of an item into account when creating buy/sell orders.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "craftNumber": {
+            "our": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, bot will recognize our item with low craft number (1 - 100) as normal item.",
+                "note":"Set both .our and .their to false if you want to bank specific low craft number.",
+                "parameters":"",
+                "example":""
+            }},
+            "their": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, bot will recognize trade partner's item with low craft number (1 - 100) as normal item.",
+                "note":"Set both .our and .their to false if you want to bank specific low craft number.",
+                "parameters":"",
+                "example":""
+            }}
+        }
+    },
+    "details": {
+        "buy": {"description":  {
+            "type": "string",
+            "default": "I am buying your %name% for %price%, I have %current_stock% / %max_stock%.",
+            "details": "This is the note that will be included with each buy order placed on backpack.tf. Maximum allowed characters: 180",
+            "note":"",
+            "parameters": ["%name% - An item's name.",
+            "%price% - An item's buying/selling price.",
+            "%current_stock% - An item's current stock.",
+            "%max_stock% - An item's maximum stock.",
+            "%amount_trade% - How much of an item can be traded.",
+            "%keyPrice% - The current key rate (selling price). If the item's selling price is above one key, this parameter will be displayed as Key rate: x ref/key. Otherwise, this parameter will not be shown on listings",
+            "%uses% - Display (𝗢𝗡𝗟𝗬 𝗪𝗜𝗧𝗛 𝟱x 𝗨𝗦𝗘𝗦) on Dueling Mini-Game listings if miscSettings.checkUses.duel is set to true, and (𝗢𝗡𝗟𝗬 𝗪𝗜𝗧𝗛 𝟐𝟱x 𝗨𝗦𝗘𝗦) on Noise Maker listings if miscSettings.checkUses.noiseMaker is set to true. It is recommended to only place this on buy listings (details.buy). On other items, this parameter output will be an empty string (show nothing)."],
+            "example":"https://user-images.githubusercontent.com/47635037/98710377-878f3580-23be-11eb-9ed5-e0f6ec4e26af.png"
+        }},
+        "sell": {"description":  {
+            "type": "string",
+            "default": "I am selling my %name% for %price%, I am selling %amount_trade%.",
+            "details": "This is the note that will be included with each sell order placed on backpack.tf. Maximum allowed characters: 180",
+            "note":"",
+            "parameters": ["%name% - An item's name.",
+            "%price% - An item's buying/selling price.",
+            "%current_stock% - An item's current stock.",
+            "%max_stock% - An item's maximum stock.",
+            "%amount_trade% - How much of an item can be traded.",
+            "%keyPrice% - The current key rate (selling price). If the item's selling price is above one key, this parameter will be displayed as Key rate: x ref/key. Otherwise, this parameter will not be shown on listings",
+            "%uses% - Display (𝗢𝗡𝗟𝗬 𝗪𝗜𝗧𝗛 𝟱x 𝗨𝗦𝗘𝗦) on Dueling Mini-Game listings if miscSettings.checkUses.duel is set to true, and (𝗢𝗡𝗟𝗬 𝗪𝗜𝗧𝗛 𝟐𝟱x 𝗨𝗦𝗘𝗦) on Noise Maker listings if miscSettings.checkUses.noiseMaker is set to true. It is recommended to only place this on buy listings (details.buy). On other items, this parameter output will be an empty string (show nothing)."],
+            "example":"https://user-images.githubusercontent.com/47635037/98710377-878f3580-23be-11eb-9ed5-e0f6ec4e26af.png"
+        }},
+        "showAutokeys": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Adds [Autokeys] in the listing note when buying and selling keys using Autokeys.",
+                "note":"",
+                "parameters":"",
+                "example":"https://user-images.githubusercontent.com/47635037/184545078-90615c38-9d2d-42c0-9349-4a777d049f9e.png"
+            }},
+        "showBoldText": {
+            "onPrice": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If enable, stylized price is shown in listing note.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "onAmount": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If enable, stylized amount is shown in listing note.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "onCurrentStock": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If enable, stylized current stock is shown in listing note.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "onMaxStock": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If enable, stylized max stock is shown in listing note.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "style": {"description":  {
+                "type": "boolean",
+                "default": "1",
+                "details": "Select a style to stylized your listing note.",
+                "note":"",
+                "keyvalues":[
+                    {"name": "Serif (Bold)", "value": 1},
+                    {"name": "Serif (Bold, Italic)", "value": 2},
+                    {"name": "Sans (Bold)", "value": 3},
+                    {"name": "Sans (Bold, Italic)", "value": 4}
+                ],
+                "example":""
+            }}
+        },
+        "highValue": {
+            "showSpells": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Show spell(s) in the listings note.",
+                "note":"Only for sell orders.",
+                "parameters":"",
+                "example":"https://user-images.githubusercontent.com/47635037/101237085-0f900300-3711-11eb-877e-cc3b5c904682.png"
+            }},
+            "showStrangeParts": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "Show Strange parts (only the one you specified in highValue.strangeParts)",
+                "note":"Only for sell orders.",
+                "parameters":"",
+                "example":""
+            }},
+            "showKillstreaker": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Show killstreaker in the listings note.",
+                "note":"Only for sell orders.",
+                "parameters":"",
+                "example":"https://user-images.githubusercontent.com/47635037/101237131-4a923680-3711-11eb-84f8-6e1384868111.png"
+            }},
+            "showSheen": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Show Sheen in the listings note.",
+                "note":"Only for sell orders.",
+                "parameters":"",
+                "example":""
+            }},
+            "showPainted": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Show painted color in the listings note.",
+                "note":"Only for sell orders.",
+                "parameters":"",
+                "example":"https://user-images.githubusercontent.com/47635037/101237099-27678700-3711-11eb-994c-4291f6196645.png"
+            }},
+            "description":  {
+                "type": "string",
+                "default": "",
+                "details": "Set your own preferred customizable high-value text",
+                "note":"",
+                "parameters":"",
+                "example":""
+            },
+            "customText": {
+                "spells": "🎃 Spells:",
+                "strangeParts": "🎰 Parts:",
+                "killstreaker": "🤩 Killstreaker:",
+                "sheen": "✨ Sheen:",
+                "painted": "🎨 Painted:",
+                "separator": "| ",
+                "ender": " |"
+            }
+        },
+        "uses": {
+            "duel": {"description":  {
+                "type": "string",
+                "default": "(𝗢𝗡𝗟𝗬 𝗪𝗜𝗧𝗛 𝟐𝟱x 𝗨𝗦𝗘𝗦)",
+                "details": "Custom %uses% parameter.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "noiseMaker": {"description":  {
+                "type": "string",
+                "default": "(𝗢𝗡𝗟𝗬 𝗪𝗜𝗧𝗛 𝟐𝟱x 𝗨𝗦𝗘𝗦)",
+                "details": "Custom %uses% parameter.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        }
+    },
+    "statistics": {
+        "lastTotalTrades": {"description":  {
+            "type": "number",
+            "default": "0",
+            "details": "If you clear out (delete) your polldata.json file, it will reset your total trades count back to zero. This option can be used as an offset to ensure you never lose track of how many trades your bot has completed in total. An example would be if you bot has completed 1000 trades and you want to clear out your polldata.json file. If you set this to 1000, your bot will remember that it has completed 1000 trades in the past.",
+            "note":"",
+            "parameters":"",
+            "example":""
+        }},
+        "startingTimeInUnix": {"description":  {
+            "type": "number (UNIX)",
+            "default": "0",
+            "details": "Similar to .lastTotalTrades, this option sets the latest instance a trade was made (in Unix Timestamp).",
+            "note":"",
+            "parameters":"",
+            "example":""
+        }},
+        "lastTotalProfitMadeInRef": {"description":  {
+            "type": "number",
+            "default": "0",
+            "details": "Similar to .lastTotalTrades, but this is for last profit made (value must in refined metal, i.e. 35.44).",
+            "note":"",
+            "parameters":"",
+            "example":""
+        }},
+        "lastTotalProfitOverpayInRef": {"description":  {
+            "type": "number",
+            "default": "0",
+            "details": "Similar to .lastTotalProfitMadeInRef, but this is for last profit from overpay (value must in refined metal, i.e. 1000.44).",
+            "note":"",
+            "parameters":"",
+            "example":""
+        }},
+        "profitDataSinceInUnix": {"description":  {
+            "type": "number (UNIX)",
+            "default": "0",
+            "details": "Similar to .startingTimeInUnix, this option sets the latest instance a profit was made (in Unix Timestamp).",
+            "note":"",
+            "parameters":"",
+            "example":""
+        }},
+        "sendStats": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "Send the content of !stats command every specified hours below",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "time": {"description":  {
+                "type": "list",
+                "default": "[ ]",
+                "details": "Time (local/timezone - 24 hours) in hour:minute format. Example: T23:59 - will send at only 23:59 PM, everyday. Please include that 'T' in front of each time, otherwise this wont work. If this is left empty but .enable is true, then it will use default values [T23:59, T05:59, T11:59, T17:59].",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        }
+    },
+    "autokeys": {
+        "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, your bot will automatically buy/sell Keys based on the availability of the Pure Metals and Keys in your bot inventory. This is done in an effort to ensure that your bot has enough Pure Metals to perform trades.",
+                "note":"keywords: Keys - Mann Co. Supply Crate Key and Pure Metals - includes Refined Metal, Reclaimed Metal and Scrap Metal",
+                "parameters":"",
+                "example":""
+            }},
+        "minKeys": {"description":  {
+            "type": "number",
+            "default": "3",
+            "details": "When the bot's current stock of Keys is greater than this value, and the bot's current stock of Pure Metals is less than .minRefined, the bot will start selling Keys in order to convert Keys into Pure Metals. Otherwise, the bot will not sell Keys.",
+            "note":"keywords: Keys - Mann Co. Supply Crate Key and Pure Metals - includes Refined Metal, Reclaimed Metal and Scrap Metal",
+            "parameters":"",
+            "example":""
+        }},
+        "maxKeys": {"description":  {
+            "type": "number",
+            "default": "15",
+            "details": "When the bot's current stock of Keys is less than this value, and the bot's current stock of Pure Metals is greater than .maxRefined, the bot will start buying Keys in order to convert Pure Metals into Keys. Otherwise, the bot will not buy Keys.",
+            "note":"keywords: Keys - Mann Co. Supply Crate Key and Pure Metals - includes Refined Metal, Reclaimed Metal and Scrap Metal",
+            "parameters":"",
+            "example":""
+        }},
+        "minRefined": {"description":  {
+                "type": "number",
+                "default": "30",
+                "details": "The minimum number of Pure Metals the bot can have before it begins selling Keys (to turn Keys into Pure Metals). See .minKeys for more information.",
+                "note":"keywords: Keys - Mann Co. Supply Crate Key and Pure Metals - includes Refined Metal, Reclaimed Metal and Scrap Metal",
+                "parameters":"",
+                "example":""
+            }},
+        "maxRefined": {"description":  {
+            "type": "number",
+            "default": "150",
+            "details": "The maximum number of Pure Metals the bot can have before it begins buying Keys (to turn Pure Metals into Keys). See .maxKeys for more information.",
+            "note":"keywords: Keys - Mann Co. Supply Crate Key and Pure Metals - includes Refined Metal, Reclaimed Metal and Scrap Metal",
+            "parameters":"",
+            "example":""
+        }},
+        "banking": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, your bot will bank (buy and sell) Keys. If your bot's current Pure Metals supply is between .minRefined and .maxRefined and Keys > .minKeys, it will bank Keys. autokeys.enable must be set to true to enable this option.",
+                "note":" The Autokeys feature is meant to have your bot maintain enough pure in its inventory. Enabling 'Autokeys - Banking' may cause the Autokeys feature to not perform as intended.",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "scrapAdjustment": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, the bot will make adjustments to the price of Keys when selling or buying",
+                "note":"",
+                "parameters":"",
+                "example":"If the current Keys price is '10 refined', the bot will take '10 refined' and add .value when buying, and subtract .value when selling. This is done in an effort to quickly buy and sell Keys using Autokeys when in a pinch by paying more for Keys and selling Keys for less. This is not possible to do when key banking (autokeys.banking.enable set to true)."
+            }},
+            "value": {"description":  {
+                "type": "number",
+                "default": "1",
+                "details": "This is the amount of scrap (0.11 refined) the bot will increase the buy listing or decrease the sell listing when buying/selling Keys using Autokeys (if .enable is set to true).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "accept": {
+            "understock": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, your bot will accept trades that will lead to keys become under-stocked.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        }
+    },
+    "crafting": {
+        "manual": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "Set this to true if you want to use !craftToken command (more will come in the future).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "weapons": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Setting this to to false will prevent your bot from automatically crafting any duplicated/class-matched craftable weapons into scrap. The pricelist takes priority over this config item. That is to say, if a craft weapon is in the pricelist, it will not be crafted into scrap.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "metals": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Setting this to false (NOT recommended) will disable metal crafting entirely. This may cause your bot and the trade partner to not be able to trade because of missing pure.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "minScrap": {"description":  {
+                "type": "number",
+                "default": "9",
+                "details": "If your bot has less Scrap Metal than this amount, it will smelt down Reclaimed Metal to maintain ample Scrap Metal supply.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "minRec": {"description":  {
+                "type": "number",
+                "default": "9",
+                "details": "If your bot has less Reclaimed Metal than this amount, it will smelt down Refined Metal to maintain ample Reclaimed Metal supply.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "threshold": {"description":  {
+                "type": "number",
+                "default": "9",
+                "details": "If the bot's Scrap/Reclaimed Metal count has reached the minimum amount, and Scrap/Reclaimed Metal count has reached this threshold [in other words, Scrap/Reclaimed Metal count is greater than (min + threshold)], it will combine the metal into the next highest denomination.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        }
+    },
+    "offerReceived": {
+        "sendPreAcceptMessage": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set this to false if you do not want your bot to send pre-accepted message to the trade partner.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "alwaysDeclineNonTF2Items": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set this to false if you want you do not want your bot to always decline trades that contains non-TF2 items (all Non-TF2 items will be held for review)",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "invalidValue": {
+            "autoDecline": {
+                "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set this to false if you do not want your bot to automatically decline any trades with 🟥_INVALID_VALUE as the ONLY manual review reason where our side value is more than their side value, or do not match exceptionValue.skus and value difference is more than exceptionValue.valueInRef",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "declineReply": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because you've sent a trade with an invalid value (your side and my side do not hold equal value).\n[You're missing: #value]",
+                "details": "custome reply if trade offer was declined because of invalid value.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            },
+            "exceptionValue": {
+                "skus": {"description":  {
+                "type": "list",
+                "default": "[ ]",
+                "details": "An array of SKUs that will bypass the 🟥_INVALID_VALUE offer if the difference between the bot's value and their value is not more than .valueInRef. Let's say your bot is selling an Unusual and someone sent an offer with 0.11 ref less, and you want your bot to accept it anyway.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "valueInRef": {"description":  {
+                    "type": "number",
+                    "default": "0",
+                    "details": "Exception value for the SKUs that you set above. The default is 0 (no exception).",
+                    "note":"",
+                    "parameters":"",
+                    "example":"when the bot accepts a trade that contains .skus and the difference in value not exceed .valueInRef (was set to 10 ref):"
+                }}
+            }
+        },
+        "invalidItems": {
+            "givePrice": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, your bot will assign price for 🟨_INVALID_ITEMS (items that are not in your price list) using prices from prices.tf.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "autoAcceptOverpay": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false, your bot will not accept trades with 🟨_INVALID_ITEMS where the value of their side is greater than or equal to the value of your bot's side.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "autoDecline": {
+                "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "Set this to false if you do not want your bot to automatically decline trades with 🟨_INVALID_ITEMS.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "declineReply": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because you've sent a trade with an invalid items (not exist in my pricelist).",
+                "details": "custom reply if trade is auto declined because of invalid items.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "disabledItems": {
+            "autoAcceptOverpay": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, your bot will accept trades with 🟧_DISABLED_ITEMS where some items that exist in your price list is currently disabled but the value of their side is greater than to the value of your bot's side.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "autoDecline": {
+                "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "Set this to true if you do want your bot to automatically decline trades with 🟧_DISABLED_ITEMS.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "declineReply": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because the item(s) you're trying to take/give is currently disabled.",
+                "details": "custom reply if trade offer is auto declined because it contains deisabled items",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "overstocked": {
+            "autoAcceptOverpay": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, your bot will accept trades with 🟦_OVERSTOCKED where some items already reach maximum the bot can have but the value of their side is greater than to the value of your bot's side.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "autoDecline": {
+                "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "Set this to true if you do want your bot to automatically decline trades with 🟦_OVERSTOCKED",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "declineReply": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because you're attempting to sell item(s) that I can't buy more of.",
+                "details": "custom reply if trade offer is auto declined because of overstock.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "understocked": {
+            "autoAcceptOverpay": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, your bot will accept trades with 🟦_OVERSTOCKED where some items already reach maximum the bot can have but the value of their side is greater than to the value of your bot's side.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "autoDecline": {
+                "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "Set this to true if you do want your bot to automatically decline trades with 🟦_OVERSTOCKED",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "declineReply": {"description":  {
+                "type": "string",
+                "default": 	"/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because you're attempting to purchase item(s) that I can't sell more of.",
+                "details": "custom reply if trade if auto declined because the item is understocked.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "duped": {
+            "enableCheck": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to true, the bot will perform checks on items to determine whether or not they are duplicated.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "minKeys": {"description":  {
+                "type": "number",
+                "default": 10,
+                "details": "The minimum number of keys an item must be worth before the bot performs a check for whether or not it is duplicated",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "autoDecline": {
+                "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, the bot will decline any unusual or values more than minKeys items that it determines as having been duplicated",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "declineReply": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because I don't accept duped items.",
+                "details": "custom reply if trade offer is auto declined because it contains duped item.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "failedToCheckDuped": {
+            "autoDecline": {
+                "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to true, the bot will decline offer that was failed to check for duped.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "declineReply": {"description":  {
+                "type": "string",
+                "default": "",
+                "details": "custom reply if trade is declined because dupe check failed.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "escrowCheckFailed": {
+            "ignoreFailed": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "By default, your bot will skip the trade and put to review if escrow check failed (probably because Steam is down, or some problem with your bot - restart will help). Set this to true if you want your bot to ignore trade with failed escrow check (not recommended).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "bannedCheckFailed": {
+            "ignoreFailed": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "By default, your bot will skip the trade and put to review if banned check failed (probably because Steamrep.com or backpack.tf is down). Set this to true if you want your bot to ignore trade with banned check failed (not recommended).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "halted": {
+            "ignoreHalted": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "When the halt mode is enabled, by default, your bot will skip the trade and put to review if someone sent an offer (might happen when the classified listings are being removed).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "reviewForced": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "This will allow the trade partner to send an offer for a refund or other purposes that will force the owner to review, and the offer message must contain at least one keyword for it to be triggered.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        }
+    },
+    "manualReview": {
+        "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Offers with reasons such as 🟥_INVALID_VALUE and so on will require manual review by you.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "showOfferSummary": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to true, your bot will show the trade offer summary to the trade partner. Otherwise, it will only notify the trade partner that their offer is being held for review.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "showReviewOfferNote": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "By default, your bot will show notes on for each manual review reason",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "showOwnerCurrentTime": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "By default, your bot will show the owner's time when sending your trade partner any manual offer review notifications.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "showItemPrices": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "set to true if you want to include item prices (buying/selling prices) - only for owner.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "invalidValue": {
+            "note": {"description":  {
+                "type": "string",
+                "default": "You're taking too much in value. then followed by [You're missing: ${value}] (unchangeable)",
+                "details": "🟥_INVALID_VALUE custom note.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "invalidItems": {
+            "note": {"description":  {
+                "type": "string",
+                "default": "%itemsName% %isOrAre% not in my pricelist.",
+                "details": "🟨_INVALID_ITEMS custom note.",
+                "note":"",
+                "parameters":[
+                    "%itemsName% - join(', ') of ${name} array",
+                    "%isOrAre% - will use are if 🟨_INVALID_ITEMS more than one."
+                ],
+                "example": "Dueling Mini-Game, Secret Saxton are not in my pricelist."
+            }}
+        },
+        "disabledItems": {
+            "note": {"description":  {
+                "type": "string",
+                "default": "%itemsName% %isOrAre% currently disabled.",
+                "details": "custom note for 🟧_DISABLED_ITEMS.",
+                "note":"",
+                "parameters": ["%itemsName% - join(', ') of ${name} array",
+                "%isOrAre% - will use are if 🟧_DISABLED_ITEMS more than one."],
+                "example": "Dueling Mini-Game, Secret Saxton are currently disabled."
+            }}
+        },
+        "overstocked": {
+            "note": {"description":  {
+                "type": "string",
+                "default": "I can only buy %itemsName% right now.",
+                "details": "custome note for 🟦_OVERSTOCKED",
+                "note":"",
+                "parameters":["%itemsName% - join(', ') of ${amountCanBuy} - ${name} array."],
+                "example":"I can only buy 1 - Secret Saxton, 0 - Jag right now."
+            }}
+        },
+        "understocked": {
+            "note": {"description":  {
+                "type": "string",
+                "default": "I can only sell %itemsName% right now.",
+                "details": "custom note for 🟩_UNDERSTOCKED",
+                "note":"",
+                "parameters":["%itemsName% - join(', ') of ${amountCanSell} - ${name} array."],
+                "example":"I can only sell 1 - Secret Saxton, 0 - Jag right now."
+            }}
+        },
+        "duped": {
+            "note": {"description":  {
+                "type": "string",
+                "default": "%itemsName% %isOrAre% appeared to be duped.",
+                "details": "custom note for 🟫_DUPED_ITEMS",
+                "note":"",
+                "parameters": ["%itemsName% - a join of ${name}, history page: https://backpack.tf/item/${el.assetid}"],
+                "example":"Strange Australium Black Box, history page: backpack.tf/item/562353463 is appeared to be duped"
+            }}
+        },
+        "dupedCheckFailed": {
+            "note": {"description":  {
+                "type": "string",
+                "default": "",
+                "details": "custom note 🟪_DUPE_CHECK_FAILED",
+                "note":"",
+                "parameters":["%itemsName% - a string OR a join of ${name}, history page: https://backpack.tf/item/${el.assetid} array"],
+                "example":"I failed to check for duped on Strange Australium Black Box, history page: backpack.tf/item/562353463"
+            }}
+        },
+        "escrowCheckFailed": {
+            "note": {"description":  {
+                "type": "string",
+                "default": "Steam is down and I failed to check your Escrow (Trade holds) status, please wait for my owner to manually accept/decline your offer.",
+                "details": "custom note for ⬜_ESCROW_CHECK_FAILED",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "bannedCheckFailed": {
+            "note": {"description":  {
+                "type": "string",
+                "default": "I have failed to obtain data about your reputation status, please wait for my owner to manually accept/decline your offer.",
+                "details": "custom note for ⬜_BANNED_CHECK_FAILED",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "halted": {
+            "note": {"description":  {
+                "type": "string",
+                "default": "❌ The bot is not operational right now, but your offer has been put to review, please wait for my owner to manually accept/decline your offer.",
+                "details": "custom note ⬜_HALTED",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "reviewForced": {
+            "note": {"description":  {
+                "type": "string",
+                "default": "Your offer has been received and will be manually reviewed by the owner.",
+                "details": "custom note for ⬜_REVIEW_FORCED",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "additionalNotes": {"description":  {
+                "type": "string",
+                "default": "",
+                "details": "Custom additional notes for offer that need to be reviewed.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+    },
+    "discordChat": {
+        "online": {
+            "type": {"description":  {
+                "type": "string or number",
+                "default": "LISTENING",
+                "details": "Set your discord bot's action when its online",
+                "note":"",
+                "keyvalues":[
+                    {"name": "Playing", "value": "PLAYING"},
+                    {"name": "Streaming", "value": "STREAMING"},
+                    {"name": "Listening", "value": "LISTENING"},
+                    {"name": "Watching", "value": "WATCHING"},
+                    {"name": "Competing", "value": "COMPETING"}
+                ],
+                "example":""
+            }},
+            "name": {"description":  {
+                "type": "string",
+                "default": "incoming offers",
+                "details": "Can be anything in your imagination",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "status": {"description":  {
+                "type": "string",
+                "default": "online",
+                "details": "Status of your discord bot when its online",
+                "note":"",
+                "keyvalues":[
+                    {"name": "Online", "value": "online"},
+                    {"name": "Idle", "value": "idle"},
+                    {"name": "DND", "value": "dnd"},
+                    {"name": "Invisible", "value": "invisible"}
+                ],
+                "example":""
+            }}
+        },
+        "halt": {
+            "type": {"description":  {
+                "type": "string or number",
+                "default": "PLAYING",
+                "details": "Set your discord bot's action when its halted",
+                "note":"",
+                "parameters":"",
+                "keyvalues":[
+                    {"name": "Playing", "value": "PLAYING"},
+                    {"name": "Streaming", "value": "STREAMING"},
+                    {"name": "Listening", "value": "LISTENING"},
+                    {"name": "Watching", "value": "WATCHING"},
+                    {"name": "Competing", "value": "COMPETING"}
+                ],
+                "example":""
+            }},
+            "name": {"description":  {
+                "type": "string",
+                "default": "? No, Halted ⛔",
+                "details": "Can be anything in your imagination.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "status": {"description":  {
+                "type": "string",
+                "default": "idle",
+                "details": "Status of your discord bot when its halted",
+                "note":"",
+                "keyvalues":[
+                    {"name": "Online", "value": "online"},
+                    {"name": "Idle", "value": "idle"},
+                    {"name": "DND", "value": "dnd"},
+                    {"name": "Invisible", "value": "invisible"}
+                ],
+                "example":""
+            }}
+        }
+    },
+    "discordWebhook": {
+        "ownerID": {"description":  {
+                "type": "list",
+                "default": "[ ]",
+                "details": "Your Discord ID(s). To obtain this, right-click on yourself on Discord and click Copy ID. Be sure to enable Developer Mode on Discord by navigating to Settings > Appearance > Advanced. It must be a number in string like \"527868979600031765\" not \"IdiNium#8965\"",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "displayName": {"description":  {
+                "type": "string",
+                "default": "",
+                "details": "The name you'd like to give your bot when it sends a message on Discord.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "avatarURL": {"description":  {
+                "type": "string",
+                "default": "",
+                "details": "A URL to the image you'd like your bot to have when it sends a discord message. This must be in URL form.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "embedColor": {"description":  {
+            "type": "string",
+            "default": "9171753",
+            "details": "The color you'd like associated with your bot's discord messages. You can view the different colors at spycolor.com. Copy the Decimal value. An example of this would be 16769280 for the color #ffe100",
+            "note":"",
+            "parameters":"",
+            "example":""
+        }},
+        "tradeSummary": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Display each successful trade summary on your trade summary/live-trades channel via Discord Webhook. If set to false, it will send to your Steam Chat.",
+                "note":"Want to feature your bots trades on the tf2autobot Discord server? Contact IdiNium for a Webhook URL!",
+                "parameters":"",
+                "example":""
+            }},
+            "url": {"description":  {
+                "type": "list",
+                "default": "[ ]",
+                "details": "An array of Discord Webhook URLs for trade summary",
+                "note":"separate each link with a comma, make sure link1 is your own Discord Webhook URL - Mention owner and show stock changes will only be shown in link1).",
+                "parameters":"",
+                "example":""
+            }},
+            "misc": {
+                "showQuickLinks": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Show the trade partner's quick links to their Steam profile, backpack.tf, and SteamREP pages.",
+                "note":"",
+                "parameters":"",
+                "example":"https://user-images.githubusercontent.com/47635037/100342811-7dee0a80-3019-11eb-84af-24f2862ba1a1.png"
+            }},
+                "showKeyRate": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Show your bot's key rate",
+                "note":"",
+                "parameters":"",
+                "example":"https://user-images.githubusercontent.com/47635037/100342811-7dee0a80-3019-11eb-84af-24f2862ba1a1.png"
+            }},
+                "showPureStock": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Show your bot's pure stock",
+                "note":"",
+                "parameters":"",
+                "example":"https://user-images.githubusercontent.com/47635037/100342811-7dee0a80-3019-11eb-84af-24f2862ba1a1.png"
+            }},
+                "showInventory": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Show the total amount of items in your bot's inventory.",
+                "note":"",
+                "parameters":"",
+                "example":"https://user-images.githubusercontent.com/47635037/100342811-7dee0a80-3019-11eb-84af-24f2862ba1a1.png"
+            }},
+                "note": {"description":  {
+                "type": "string",
+                "default": "",
+                "details": "Any additional notes you'd like included with trade summaries. Linked note format: [YourText](Link)",
+                "note":"",
+                "parameters":"",
+                "example":"https://user-images.githubusercontent.com/47635037/100342811-7dee0a80-3019-11eb-84af-24f2862ba1a1.png"
+            }}
+            },
+            "mentionOwner": {
+                "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to false, your bot will never mention you on each successful trade (except for accepted 🟨_INVALID_ITEMS or 🔶_HIGH_VALUE_ITEMS)",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "itemSkus": {"description":  {
+                "type": "list",
+                "default": "[ ]",
+                "details": "Your bot will mention you whenever a trade contains an SKU in this list. Supports multiple item SKUs. For example, let say you just want to be mentioned on every unusual and australium trade. You would input \";5;u\", \";11;australium\". If you want to be mentioned on specific items, just fill in the full item SKU, like so: \"725;6;uncraftable\". To add more, just separate new items with a comma between each SKU string.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "tradeValueInRef": {"description":  {
+                    "type": "number",
+                    "default": 0,
+                    "details": "Zero means disable. If this is set to other than 0, then any trade that's greater or equal to set value will be mentioned.",
+                    "note":"",
+                    "parameters":"",
+                    "example":""
+                }}
+            }
+        },
+        "declinedTrade": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false, messages regarding declined trade offers will be sent to your Steam Chat. Otherwise, these messages will be sent on Discord (only if .url is not empty).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "url": {"description":  {
+                "type": "list",
+                "default": "[ ]",
+                "details": "Discord Webhook URL for DECLINED_TRADE.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "misc": {
+                "showQuickLinks": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Show the trade partner's quick links to their Steam profile, backpack.tf, and SteamREP pages.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "showKeyRate": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Show your bot's key rate.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "showPureStock": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Show your bot's pure stock.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "showInventory": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Show the total amount of items in your bot's inventory.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "note": {"description":  {
+                "type": "string",
+                "default": "",
+                "details": "Any additional notes you'd like included with declined trade webhook.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "offerReview": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false, messages regarding trade offers that require manual review will be sent to your Steam Chat. Otherwise, these messages will be sent on Discord.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "url": {"description":  {
+                "type": "string",
+                "default": "",
+                "details": "Discord Webhook URL for REVIEW_OFFER",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "mentionInvalidValue": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false, your bot NOT mention you for ONLY 🟥_INVALID_VALUE offers.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "isMention": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false, you will never be mentioned on any offer to be reviewed.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "misc": {
+                "showQuickLinks": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Show the trade partner's quick links to their Steam profile, backpack.tf, and SteamREP pages.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "showKeyRate": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Show your bot's key rate.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "showPureStock": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Show your bot's pure stock.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "showInventory": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Show the total amount of items in your bot's inventory.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "messages": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Used to alert you on any messages sent from the trade partner via Discord Webhook. If set to false, it will send to your Steam Chat.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "isMention": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false, you will never be mentioned on any new messages from trade partner.",
+                "note":"",
+                "parameters":"",
+                "example":"https://user-images.githubusercontent.com/47635037/100345359-2c477f00-301d-11eb-89ae-1b6ec8391106.png"
+            }},
+            "url": {"description":  {
+                "type": "string",
+                "default": "",
+                "details": "Discord Webhook URLs for messages.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "showQuickLinks": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Show the trade partner's quick links to their Steam profile, backpack.tf, and SteamREP pages.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "priceUpdate": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false to disable this feature.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "showOnlyInStock": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "Set to true if you want your bot to show price changes that is only in stock.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "showFailedToUpdate": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if you don't want your bot to show any error while updating prices.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "url": {"description":  {
+                "type": "string",
+                "default": "",
+                "details": "The Discord Webhook URL you'd like price update webhook to be sent to.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "note": {"description":  {
+                "type": "string",
+                "default": "",
+                "details": "Any additional notes you'd like included with price update webhook.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "sendAlert": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false, the bot will notify you through Steam chat if there is something wrong. Otherwise, the bot will notify you through Discord (sendAlert must be true).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "isMention": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "If set to false, you will never be mentioned on any alert.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "url": {
+                "main": {"description":  {
+                "type": "string",
+                "default": "",
+                "details": "The main Discord Webhook URL you'd for the alert to be sent to",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "partialPriceUpdate": {"description":  {
+                "type": "string",
+                "default": "",
+                "details": "Optional - Separate partial price update alerts from the main alerts.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "sendStats": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "false",
+                "details": "If set to false, the bot will send stats through Steam chat. Otherwise, the bot will send stats to Discord (statistics.autoSendStats.enable must be true and statistics.autoSendStats.time is empty or filled).",
+                "note":"",
+                "parameters":"",
+                "example":"https://user-images.githubusercontent.com/47635037/106655152-f94cd900-65d3-11eb-8fe8-3e74a7008d44.png"
+            }},
+            "url": {"description":  {
+                "type": "string",
+                "default": "",
+                "details": "The Discord Webhook URL you'd for the stats to be sent to.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        }
+    },
+    "customMessage": {
+        "sendOffer": {"description":  {
+                "type": "string",
+                "default": "Thank you for the trade!",
+                "details": "Set a custom message when sending trade offers",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "counterOffer": {"description":  {
+                "type": "string",
+                "default": "Your offer contains wrong value. You've probably made a few mistakes, here's the correct offer.",
+                "details": "Set a custom message when making a counter offer",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "welcome": {"description":  {
+                "type": "string",
+                "default": "Hi %name%! If you don't know how things work, please type '!%admin%'",
+                "details": "Your custom greeting note.",
+                "note":"",
+                "parameters":[
+                    "%name% - display trade partner's name",
+                "%admin% - if admin, it will use '!help', else '!how2trade'"
+            ],
+                "example":""
+            }},
+        "commandNotFound": {"description":  {
+                "type": "string",
+                "default": "❌ I don't know what you mean, please type '!help' for all of my commands!",
+                "details": "Your custom note when people send the wrong command.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "success": {"description":  {
+                "type": "string",
+                "default": "/pre ✅ Success! The offer went through successfully.",
+                "details": "Bot message when a trade has been successfully made.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "successEscrow": {"description":  {
+                "type": "string",
+                "default": "✅ Success! The offer has gone through successfully, but you will receive your items after several days. To prevent this from happening in the future, please enable Steam Guard Mobile Authenticator.",
+                "details": "Bot message when an offer is accepted but has trade hold.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "halted": {"description":  {
+                "type": "string",
+                "default": "❌ The bot is not operational right now. Please come back later.",
+                "details": "Custom message when bot is halted.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "decline": {
+            "general": {"description":  {
+                "type": "string",
+                "default": "❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined",
+                "details": "Custom message when a trade offer is declined.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "hasNonTF2Items": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because the offer you've sent contains Non-TF2 items.",
+                "details": "custom message when a trade offer is declined because of non tf2 item.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "giftNoNote": {"description":  {
+                "type": "string",
+                "default": 	"/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because the offer you've sent is an empty offer on my side without any offer message. If you wish to give it as a gift, please include 'gift' in the offer message. Thank you.",
+                "details": "custom message when a gift offer is declined because because of empty offer message ",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "giftFailedCheckBanned": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because the offer you've sent is a gift, but I've failed to check your reputation status.",
+                "details": "custom message when a gift offer is declined because of failed rep check. ",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "crimeAttempt": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because you're taking free items. No.",
+                "details": "custome message when user tries take our items without offerinng anything in return",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "onlyMetal": {"description":  {
+                "type": "string",
+                "default": 	"/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because you might forgot to add items into the trade.",
+                "details": "custome message when a trade offer contains only metal and no other items",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "duelingNot5Uses": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because your offer contains Dueling Mini-Game(s) that does not have 5 uses.",
+                "details": "",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "noiseMakerNot25Uses": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because your offer contains Noise Maker(s) that does not have 25 uses",
+                "details": "",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "highValueItemsNotSelling": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because you're attempting to purchase %highValueName%, but I am not selling it right now.",
+                "details": "",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "notTradingKeys": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because I am no longer trading keys. You can confirm this by typing \"!price Mann Co. Supply Crate Key\" or \"!autokeys\".",
+                "details": "",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "notSellingKeys": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because I am no longer selling keys. You can confirm this by typing \"!price Mann Co. Supply Crate Key\" or \"!autokeys\".",
+                "details": "",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "notBuyingKeys": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because I am no longer buying keys. You can confirm this by typing \"!price Mann Co. Supply Crate Key\" or \"!autokeys\".",
+                "details": "",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "halted": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because I am not operational right now. Please come back later.",
+                "details": "",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "banned": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because you're currently banned on backpack.tf or labeled as a scammer on steamrep.com or another community.",
+                "details": "",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "escrow": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because I do not accept escrow (trade holds). To prevent this from happening in the future, please enable Steam Guard Mobile Authenticator.\nRead:\n• Steam Guard Mobile Authenticator - https://support.steampowered.com/kb_article.php?ref=8625-WRAH-9030\n• How to set up Steam Guard Mobile Authenticator - https://support.steampowered.com/kb_article.php?ref=4440-RTUI-9218",
+                "details": "",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "manual": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. . Reason: The offer has been declined by the owner.",
+                "details": "",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "failedToCounter": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined. Counteroffer is not possible because either one of us does not have enough pure, or Steam might be down, or your inventory is private (failed to load your inventory).",
+                "details": "",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "takingItemsWithIntentBuy": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because you're attempting to take items that I only want to buy.",
+                "details": "",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "givingItemsWithIntentSell": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been declined because you're attempting to give items that I only want to sell.",
+                "details": "",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+        },
+        "accepted": {
+            "automatic": {
+                "largeOffer": {"description":  {
+                "type": "string",
+                "default": "I have accepted your offer. The trade may take a while to finalize due to it being a large offer. If the trade does not finalize after 5-10 minutes has passed, please send your offer again, or add me and use the !sell/!sellcart or !buy/!buycart command.",
+                "details": "",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "smallOffer": {"description":  {
+                "type": "string",
+                "default": "I have accepted your offer. The trade should be finalized shortly. If the trade does not finalize after 1-2 minutes has passed, please send your offer again, or add me and use the !sell/!sellcart or !buy/!buycart command.",
+                "details": "",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            },
+            "manual": {
+                "largeOffer": {"description":  {
+                "type": "string",
+                "default": "My owner has manually accepted your offer. The trade may take a while to finalize due to it being a large offer. If the trade does not finalize after 5-10 minutes has passed, please send your offer again, or add me and use the !sell/!sellcart or !buy/!buycart command.",
+                "details": "",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "smallOffer": {"description":  {
+                "type": "string",
+                "default": "My owner has manually accepted your offer. The trade should be finalized shortly. If the trade does not finalize after 1-2 minutes has passed, please send your offer again, or add me and use the !sell/!sellcart or !buy/!buycart command.",
+                "details": "",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "tradedAway": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! Your offer is no longer available. Reason: Items not available (traded away in a different trade).",
+                "details": "Your custom note when the bot fails to trade because the item is traded away.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "failedMobileConfirmation": {"description":  {
+                "type": "string",
+                "default": " /pre ❌ Ohh nooooes! The offer is no longer available. Reason: Failed to accept mobile confirmation",
+                "details": "Your custom note when the bot fails to perform mobile confirmation.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "cancelledActiveForAwhile": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: The offer has been active for a while. If the offer was just created, this is likely an issue on Steam's end. Please try again",
+                "details": "Your custom note when the trade got canceled.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "clearFriends": {"description":  {
+                "type": "string",
+                "default": "/quote I am cleaning up my friend list and you have randomly been selected to be removed. Please feel free to add me again if you want to trade at a later time!",
+                "details": "Your custom message to trade partner when the bot removing them to replace with others.",
+                "note":"",
+                "parameters":["%name% - partner's name"],
+                "example":""
+            }}
+    },
+    "commands": {
+        "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if you want to disable commands (immune to ADMINS).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "customDisableReply": {"description":  {
+                "type": "string",
+                "default": "❌ Command function is disabled by the owner.",
+                "details": "Your custome message to inform the user that commands are disabled",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+        "how2trade": {
+            "customReply": {
+                "reply": {
+                    "description":  {
+                        "type": "string",
+                        "default": "/quote You can either send me an offer yourself or use one of my commands to request a trade. Say you want to buy a Team Captain, just type \"!buy Team Captain\", if want to buy more, just add the [amount] - \"!buy 2 Team Captain\". Type \"!help\" for all the commands. You can also buy or sell multiple items by using the \"!buycart [amount] <item name>\" or \"!sellcart [amount] <item name>\" commands.",
+                        "details": "custome reply for !how2trade command",
+                        "note":"",
+                        "parameters":"",
+                        "example":""
+                    }
+                }
+            }
+        },
+        "price": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if want to disable !price command.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customReply": {
+                "disabled": {"description":  {
+                "type": "string",
+                "default": "❌ This command is disabled by the owner.",
+                "details": "Your custom reply if !price is disabled",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "buy": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if want to disable !buy command.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "disableForSKU": {"description":  {
+                "type": "list",
+                "default": "[ ]",
+                "details": "Set specific sku(s) to disable !buy commands.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customReply": {
+                "disabled": {"description":  {
+                "type": "string",
+                "default": "❌ This command is disabled by the owner.",
+                "details": "",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "disabledForSKU": {"description":  {
+                "type": "string",
+                "default": "❌ !buy command is disabled for %itemName%.",
+                "details": "custon reply for !buy command when a specific its disabled for a specific SKU",
+                "note":"",
+                "parameters": ["%itemName% - The name of an item of specified SKU"],
+                "example":""
+            }}
+            }
+        },
+        "sell": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if want to disable !sell command.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "disableForSKU": {"description":  {
+                "type": "list",
+                "default": "[ ]",
+                "details": "Set specific sku(s) to disable !sell commands.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customReply": {
+                "disabled": {"description":  {
+                "type": "string",
+                "default": "❌ This command is disabled by the owner.",
+                "details": "custom reply when !sell command is disabled",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "disabledForSKU": {"description":  {
+                    "type": "string",
+                    "default": "❌ !sell command is disabled for %itemName%.",
+                    "details": "custon reply for !sell command when a specific its disabled for a specific SKU",
+                    "note":"",
+                    "parameters": ["%itemName% - The name of an item of specified SKU"],
+                    "example":""
+            }}
+            }
+        },
+        "buycart": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if want to disable !buycart command.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "disableForSKU": {"description":  {
+                "type": "list",
+                "default": "[ ]",
+                "details": "Set specific sku(s) to disable !buycart commands.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customReply": {
+                "disabled": {"description":  {
+                "type": "string",
+                "default": "❌ This command is disabled by the owner.",
+                "details": "custom reply when !buycart command is disabled",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "disabledForSKU": {"description":  {
+                    "type": "string",
+                    "default": "❌ !buycart command is disabled for %itemName%.",
+                    "details": "custon reply for !buycart command when a specific its disabled for a specific SKU",
+                    "note":"",
+                    "parameters": ["%itemName% - The name of an item of specified SKU"],
+                    "example":""
+            }}
+            }
+        },
+        "sellcart": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if want to disable !sellcart command.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "disableForSKU": {"description":  {
+                "type": "list",
+                "default": "[ ]",
+                "details": "Set specific sku(s) to disable !sellcart commands.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customReply": {
+                "disabled": {"description":  {
+                "type": "string",
+                "default": "❌ This command is disabled by the owner.",
+                "details": "custom reply when !sellcart is disabled",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "disabledForSKU": {"description":  {
+                    "type": "string",
+                    "default": "❌ !sellcart command is disabled for %itemName%.",
+                    "details": "custon reply for !sellcart command when a specific its disabled for a specific SKU",
+                    "note":"",
+                    "parameters": ["%itemName% - The name of an item of specified SKU"],
+                    "example":""
+            }}
+            }
+        },
+        "cart": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if want to disable !cart command.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customReply": {
+                "title": {"description":  {
+                "type": "string",
+                "default": "🛒== YOUR CART ==🛒",
+                "details": "custom reply for !cart command",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "disabled": {"description":  {
+                "type": "string",
+                "default": "❌ This command is disabled by the owner.",
+                "details": "custom reply if !cart commmand is disabled",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "clearcart": {
+            "customReply": {
+                "reply": {"description":  {
+                "type": "string",
+                "default": "🛒 Your cart has been cleared.",
+                "details": "Custom reply !clearcart command",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "checkout": {
+            "customReply": {
+                "empty": {"description":  {
+                "type": "string",
+                "default": "🛒 Your cart is empty",
+                "details": "custom reply for !checkout command if cart is empty",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "addToQueue": {
+            "alreadyHaveActiveOffer": {"description":  {
+                "type": "string",
+                "default": "❌ You already have an active offer! Please finish it before requesting a new one: %tradeurl%",
+                "details": "Custom reply if a new offer is requested while having an active offer already.",
+                "note":"",
+                "parameters": ["%tradeurl% - output: https://steamcommunity.com/tradeoffer/${activeOfferID}"],
+                "example":""
+            }},
+            "alreadyInQueueProcessingOffer": {"description":  {
+                "type": "string",
+                "default": "⚠️ You are already in the queue! Please wait while I process your offer.",
+                "details": "Custom reply if user is alreay in queue and their offer is being processed. ",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "alreadyInQueueWaitingTurn": {"description":  {
+                "type": "string",
+                "default": "✅ You have been added to the queue! Please wait your turn, there %isOrAre% %position% in front of you",
+                "details": "custom reply when a user is already in the queue.",
+                "note":"",
+                "parameters":["%isOrAre% - more than 1 use \"are\", else \"is\"", "%position% - total queue position"],
+                "example":""
+            }},
+            "addedToQueueWaitingTurn": {"description":  {
+                "type": "string",
+                "default": "✅ You have been added to the queue! Please wait your turn, there %isOrAre% %position% in front of you.",
+                "details": "custom reply when a user is added to the queue",
+                "note":"",
+                "parameters":["%isOrAre% - more than 1 use \"are\", else \"is\"", "%position% - total queue position"],
+                "example":""
+            }},
+            "alteredOffer": {"description":  {
+                "type": "string",
+                "default": "⚠️ Your offer has been altered. Reason: %altered%.",
+                "details": "Custom reply if an offer is altered",
+                "note":"",
+                "parameters": ["%altered% - altered message - unchangeable"],
+                "example":""
+            }},
+            "processingOffer": {
+                "donation": {"description":  {
+                "type": "string",
+                "default": "⌛ Please wait while I process your donation! %summarize%",
+                "details": "Custome reply when process donations",
+                "note":"",
+                "parameters": ["%summarize% - summarize message - unchangeable"],
+                "example":""
+            }},
+                "isBuyingPremium": {"description":  {
+                "type": "string",
+                "default": " Please wait while I process your premium purchase! %summarize%",
+                "details": "Custon reply when purchasing backpack.tf premium",
+                "note":"",
+                "parameters": ["%summarize% - summarize message - unchangeable"],
+                "example":""
+            }},
+                "offer": {"description":  {
+                "type": "string",
+                "default": "⌛ Please wait while I process your offer! %summarize%",
+                "details": "Custom reply when process an offer",
+                "note":"",
+                "parameters": ["%summarize% - summarize message - unchangeable"],
+                "example":""
+            }}
+            },
+            "hasBeenMadeAcceptingMobileConfirmation": {
+                "donation": {"description":  {
+                "type": "string",
+                "default": "Your donation has been made! Please wait while I accept the mobile confirmation.",
+                "details": "Custom reply when bot is doing mobile confirmation for donation.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "isBuyingPremium": {"description":  {
+                "type": "string",
+                "default": "Your premium purchase has been made! Please wait while I accept the mobile confirmation.",
+                "details": "Custom reply when bot is doing mobile confirmations for premium purchase.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "offer": {"description":  {
+                "type": "string",
+                "default": "Your offer has been made! Please wait while I accept the mobile confirmation.",
+                "details": "Custom reply when bot is doing mobile confirmation for trade offers.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "cancel": {
+            "customReply": {
+                "isBeingSent": {"description":  {
+                "type": "string",
+                "default": "⚠️ Your offer is already being sent! Please try again when the offer is active.",
+                "details": "custom reply for !cancel command when an offer is already being sent. ",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "isCancelling": {"description":  {
+                "type": "string",
+                "default": "⚠️ Your offer is already being canceled. Please wait a few seconds for it to be canceled.",
+                "details": "custom reply for !cancel command when an offer is already being canceled.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "isRemovedFromQueue": {"description":  {
+                "type": "string",
+                "default": "✅ You have been removed from the queue.",
+                "details": "custom reply for !cancel command when user is being removed from the queue",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "noActiveOffer": {"description":  {
+                "type": "string",
+                "default": "❌ You don't have an active offer.",
+                "details": "custom reply for !cancel command when there is no active offer.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "successCancel": {"description":  {
+                "type": "string",
+                "default": "/pre ❌ Ohh nooooes! The offer is no longer available. Reason: Offer was canceled by user.",
+                "details": "custom reply for !cancel command when offer is cancelled successfully.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "queue": {
+            "customReply": {
+                "notInQueue": {"description":  {
+                "type": "string",
+                "default": "❌ You are not in the queue.",
+                "details": "custom reply for !queue command when user is not in queue",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "offerBeingMade": {"description":  {
+                "type": "string",
+                "default": "⌛ Your offer is being made.",
+                "details": "custom reply for !queue command when an offer is being made.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "hasPosition": {"description":  {
+                "type": "string",
+                "default": "There are %position% users ahead of you.",
+                "details": "custom reply for !queue command if a user is in queue.",
+                "note":"",
+                "parameters": ["%position% - total position in queue"],
+                "example":""
+            }}
+            }
+        },
+        "owner": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if want to disable !owner command (ADMINS are immune).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customReply": {
+                "disabled": {"description":  {
+                "type": "string",
+                "default": "❌ This command is disabled by the owner.",
+                "details": "custom reply if !owner command if disabled.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "reply": {"description":  {
+                "type": "string",
+                "default": "• Steam: %steamurl%\n• Backpack.tf: %bptfurl%",
+                "details": "custom reply if !owner is enabled",
+                "note":"",
+                "parameters":[
+                    "%steamurl% - https://steamcommunity.com/profiles/${firstAdmin.toString()}",
+                    "%bptfurl% - https://backpack.tf/profiles/${firstAdmin.toString()}",
+                    "%steamid% - SteamID64 of the first ADMINS element"
+                ],
+                "example":""
+            }}
+            }
+        },
+        "discord": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if want to disable !discord command (ADMINS are immune).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "inviteURL": {"description":  {
+                "type": "string",
+                "default": "https://discord.gg/4k5tmMkXjB",
+                "details": "Set your discord invite url here. Default is tf2autobot's official discord server",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customReply": {
+                "disabled": {"description":  {
+                "type": "string",
+                "default": "❌ This command is disabled by the owner.",
+                "details": "custom reply if !discord command is disabled",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "reply": {"description":  {
+                "type": "string",
+                "default": "TF2Autobot Discord Server: https://discord.gg/4k5tmMkXjB \nOwner's Discord Server: ${inviteURL}",
+                "details": "Custom reply if !discord command is enabled.",
+                "note":"If !discord command is enabled but discord.inviteURL is empty, the default link of TF2Autobot Discord Server is shown",
+                "parameters": ["%discordurl% - your commands.discord.inviteURL"],
+                "example":""
+            }}
+            }
+        },
+        "more": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if want to disable !more command (ADMINS are immune).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customReply": {
+                "disabled": {"description":  {
+                "type": "string",
+                "default": "❌ This command is disabled by the owner..",
+                "details": "custom reply if !more command is disabled.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "autokeys": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if you want to disable !autokeys command (ADMINS are immune).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customReply": {
+                "disabled": {"description":  {
+                "type": "string",
+                "default": "❌ This command is disabled by the owner..",
+                "details": "custom reply for if !autokeys command is disabled.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "message": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if want to disable !message command (ADMINS are immune).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "showOwnerName": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if you don't want the bot to show your name (will be replaced with \"the owner\").",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customReply": {
+                "disabled": {"description":  {
+                "type": "string",
+                "default": "❌ This command is disabled by the owner.",
+                "details": "custom reply if !message command is disabled.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "wrongSyntax": {"description":  {
+                "type": "string",
+                "default": "❌ Please include a message. Here's an example: \"!message Hi\"",
+                "details": "custom reply for !message if syntax is wrong.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "fromOwner": {"description":  {
+                "type": "string",
+                "default": "/quote 💬 Message from the owner: %reply%\n\n❔ Hint: You can use the !message command to respond to the owner of this bot.\nExample: !message Hi Thanks!",
+                "details": "custom reply showing owner's message",
+                "note":["%reply% - Your reply"],
+                "parameters":"",
+                "example":""
+            }},
+                "success": {"description":  {
+                "type": "string",
+                "default": "Your message has been sent.",
+                "details": "custom reply if !message command is successfull",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
+            }
+        },
+        "time": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if want to disable !time command (ADMINS are immune).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customReply": {
+                "disabled": {"description":  {
+                "type": "string",
+                "default": "❌ This command is disabled by the owner.",
+                "details": "custom reply if !time command is disabled.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "reply": {"description":  {
+                "type": "string",
+                "default": "It is currently the following time in my owner's timezone: %emoji% %time%\n\n%note%",
+                "details": "custom reply if !time command is enabled",
+                "note":"",
+                "parameters": [
+                    "%emoji% - clock emoji",
+                    "%time% - full time format",
+                    "%note% - additional notes"
+                ],
+                "example":""
+            }}
+            }
+        },
+        "uptime": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if want to disable !uptime command (ADMINS are immune).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customReply": {
+                "disabled": {"description":  {
+                "type": "string",
+                "default": "❌ This command is disabled by the owner.",
+                "details": "custom reply if !uptime command is disabled.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "reply": {"description":  {
+                "type": "string",
+                "default": "Bot has been up for %uptime%",
+                "details": "custom reply if !uptime command is enabled.",
+                "note":"",
+                "parameters": ["%uptime% - total uptime"],
+                "example":""
+            }}
+            }
+        },
+        "pure": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if want to disable !pure command (ADMINS are immune).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customReply": {
+                "disabled": {"description":  {
+                "type": "string",
+                "default": "❌ This command is disabled by the owner.",
+                "details": "custom reply if !pure command is disabled.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "reply": {"description":  {
+                "type": "string",
+                "default": "💰 I have %pure% in my inventory/",
+                "details": "custom reply if !pure command is enabled.",
+                "note":"",
+                "parameters":["%pure% - a join('and') of pureStock array"],
+                "example":"I have 31 keys and 17.44 refs (12 ref, 11 rec, 16 scrap) in my inventory."
+            }}
+            }
+        },
+        "rate": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if want to disable !pure command (ADMINS are immune).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customReply": {
+                "disabled": {"description":  {
+                "type": "string",
+                "default": "❌ This command is disabled by the owner.",
+                "details": "custom reply if !rate command is disabled.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "reply": {"description":  {
+                "type": "string",
+                "default": "I value 🔑 Mann Co. Supply Crate Keys at %keyprice%. This means that one key is the same as %keyprice% and %keyprice% is the same as one key. Key rate source: %source%",
+                "details": "custom reply if !rate command is enabled.",
+                "note":"",
+                "parameters": [
+                    "%keyPrice% - current sell price",
+                    "%keyRate% - current buy/sell price",
+                    "%source% - show pricestf url if autopriced, \"manual\" if manually priced"
+                ],
+                "example":""
+            }}
+            }
+        },
+        "stock": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if want to disable !stock command (ADMINS are immune).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "maximumItems": {"description":  {
+                "type": "number",
+                "default": 20,
+                "details": "Maximum number of items to be shown. Default is 20.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customReply": {
+                "disabled": {"description":  {
+                "type": "string",
+                "default": "❌ This command is disabled by the owner.",
+                "details": "custom reply if !stock command is disabled.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "reply": {"description":  {
+                "type": "string",
+                "default": "/pre 📜 Here's a list of all the items that I have in my inventory:\n%stocklist%",
+                "details": "custom reply if !stock is disabled.",
+                "note":"",
+                "parameters":["%stocklist% - a join(', \n') array of the items your bot have (up to stock.maximumItems)."],
+                "example":""
+            }}
+            }
+        },
+        "craftweapon": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if want to disable !craftweapon command (ADMINS are immune).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "showOnlyExist": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if you want show all weapons, including no stock.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customReply": {
+                "disabled": {"description":  {
+                "type": "string",
+                "default": "❌ This command is disabled by the owner.",
+                "details": "Custom reply if !craftweapon command is disabled.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "dontHave": {"description":  {
+                "type": "string",
+                "default": "❌ I don't have any craftable (or uncraftable) weapons in my inventory.",
+                "details": "Custom reply for !craftweapon command if we don't have craft weapons in our inventory.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "have": {"description":  {
+                "type": "string",
+                "default": "📃 Here's a list of all craft (or uncraft) weapons stock in my inventory:\n\n%list%",
+                "details": "Custom reply for !craftweapon command if we have craft weapons in our inventory.",
+                "note":"",
+                "parameters": ["%list% - a join(', \n') array of craftable weapons that your bot have."],
+                "example":""
+            }}
+            }
+        },
+        "uncraftweapon": {
+            "enable": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if want to disable !uncraftweapon command (ADMINS are immune).",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "showOnlyExist": {"description":  {
+                "type": "boolean",
+                "default": "true",
+                "details": "Set to false if want show all weapons, including no stock.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "customReply": {
+                "disabled": {"description":  {
+                "type": "string",
+                "default": "❌ This command is disabled by the owner.",
+                "details": "Custom reply if !uncraftWeapon command is disabled.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "dontHave": {"description":  {
+                "type": "string",
+                "default": "❌ I don't have any craftable (or uncraftable) weapons in my inventory.",
+                "details": "Custom reply for !uncraftWeapon command if we don't have uncraft weapons in our inventory.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+                "have": {"description":  {
+                "type": "string",
+                "default": "📃 Here's a list of all craft (or uncraft) weapons stock in my inventory:\n\n%list%",
+                "details": "Custom reply for !uncraftWeapon command if we have uncraft weapons in our inventory.",
+                "note":"",
+                "parameters": ["%list% - a join(', \n') array of uncraftable weapons that your bot have."],
+                "example":""
+            }}
+            }
+        }
+    },
+    "detailsExtra": {
+        "spells": {
+            "description":  {
+                "type": "string",
+                "default": "",
+                "details": "Custom string to be shown in listing note if details.highValue.showSpells set to true",
+                "note":"",
+                "parameters":"",
+                "example":""
+            },
+            "Putrescent Pigmentation": "PP 🍃",
+            "Die Job": "DJ 🍐",
+            "Chromatic Corruption": "CC 🪀",
+            "Spectral Spectrum": "Spec 🔵🔴",
+            "Sinister Staining": "Sin 🍈",
+            "Voices From Below": "VFB 🗣️",
+            "Team Spirit Footprints": "TS-FP 🔵🔴",
+            "Gangreen Footprints": "GG-FP 🟡",
+            "Corpse Gray Footprints": "CG-FP 👽",
+            "Violent Violet Footprints": "VV-FP ♨️",
+            "Rotten Orange Footprints": "RO-FP 🍊",
+            "Bruised Purple Footprints": "BP-FP 🍷",
+            "Headless Horseshoes": "HH 🍇",
+            "Exorcism": "👻",
+            "Pumpkin Bombs": "🎃💣",
+            "Halloween Fire": "🔥🟢"
+        },
+        "sheens": {
+            "description":  {
+                "type": "string",
+                "default": "",
+                "details": "Custom string to be shown in listing note if details.highValue.showSheens set to true",
+                "note":"",
+                "parameters":"",
+                "example":""
+            },
+            "Team Shine": "🔵🔴",
+            "Hot Rod": "🌸",
+            "Manndarin": "🟠",
+            "Deadly Daffodil": "🟡",
+            "Mean Green": "🟢",
+            "Agonizing Emerald": "🟩",
+            "Villainous Violet": "🟣"
+        },
+        "killstreakers": {
+            "description":  {
+                "type": "string",
+                "default": "",
+                "details": "Custom string to be shown in listing note if details.highValue.showKillstreakers set to true",
+                "note":"",
+                "parameters":"",
+                "example":""
+            },
+            "Cerebral Discharge": "⚡",
+            "Fire Horns": "🔥🐮",
+            "Flames": "🔥",
+            "Hypno-Beam": "😵💫",
+            "Incinerator": "🚬",
+            "Singularity": "🔆",
+            "Tornado": "🌪️"
+        },
+        "painted": {
+            "description":  {
+                "type": "string",
+                "default": "",
+                "details": "Custom string to be shown in listing note if details.highValue.showPainted set to true and the price set here will be added to the base price of when selling item with this paint.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            },
+            "A Color Similar to Slate": {
+                "stringNote": "🧪",
+                "price": {
+                    "keys": 0,
+                    "metal": 11
+                }
+            },
+            "A Deep Commitment to Purple": {
+                "stringNote": "🪀",
+                "price": {
+                    "keys": 0,
+                    "metal": 15
+                }
+            },
+            "A Distinctive Lack of Hue": {
+                "stringNote": "🎩",
+                "price": {
+                    "keys": 1,
+                    "metal": 5
+                }
+            },
+            "A Mann's Mint": {
+                "stringNote": "👽",
+                "price": {
+                    "keys": 0,
+                    "metal": 30
+                }
+            },
+            "After Eight": {
+                "stringNote": "🏴",
+                "price": {
+                    "keys": 1,
+                    "metal": 5
+                }
+            },
+            "Aged Moustache Grey": {
+                "stringNote": "👤",
+                "price": {
+                    "keys": 0,
+                    "metal": 5
+                }
+            },
+            "An Extraordinary Abundance of Tinge": {
+                "stringNote": "🏐",
+                "price": {
+                    "keys": 1,
+                    "metal": 5
+                }
+            },
+            "Australium Gold": {
+                "stringNote": "🏆",
+                "price": {
+                    "keys": 0,
+                    "metal": 15
+                }
+            },
+            "Color No. 216-190-216": {
+                "stringNote": "🧠",
+                "price": {
+                    "keys": 0,
+                    "metal": 7
+                }
+            },
+            "Dark Salmon Injustice": {
+                "stringNote": "🐚",
+                "price": {
+                    "keys": 0,
+                    "metal": 15
+                }
+            },
+            "Drably Olive": {
+                "stringNote": "🥝",
+                "price": {
+                    "keys": 0,
+                    "metal": 5
+                }
+            },
+            "Indubitably Green": {
+                "stringNote": "🥦",
+                "price": {
+                    "keys": 0,
+                    "metal": 5
+                }
+            },
+            "Mann Co. Orange": {
+                "stringNote": "🏀",
+                "price": {
+                    "keys": 0,
+                    "metal": 6
+                }
+            },
+            "Muskelmannbraun": {
+                "stringNote": "👜",
+                "price": {
+                    "keys": 0,
+                    "metal": 2
+                }
+            },
+            "Noble Hatter's Violet": {
+                "stringNote": "🍇",
+                "price": {
+                    "keys": 0,
+                    "metal": 7
+                }
+            },
+            "Peculiarly Drab Tincture": {
+                "stringNote": "🪑",
+                "price": {
+                    "keys": 0,
+                    "metal": 3
+                }
+            },
+            "Pink as Hell": {
+                "stringNote": "🎀",
+                "price": {
+                    "keys": 1,
+                    "metal": 10
+                }
+            },
+            "Radigan Conagher Brown": {
+                "stringNote": "🚪",
+                "price": {
+                    "keys": 0,
+                    "metal": 2
+                }
+            },
+            "The Bitter Taste of Defeat and Lime": {
+                "stringNote": "💚",
+                "price": {
+                    "keys": 1,
+                    "metal": 10
+                }
+            },
+            "The Color of a Gentlemann's Business Pants": {
+                "stringNote": "🧽",
+                "price": {
+                    "keys": 0,
+                    "metal": 5
+                }
+            },
+            "Ye Olde Rustic Colour": {
+                "stringNote": "🥔",
+                "price": {
+                    "keys": 0,
+                    "metal": 2
+                }
+            },
+            "Zepheniah's Greed": {
+                "stringNote": "🌳",
+                "price": {
+                    "keys": 0,
+                    "metal": 4
+                }
+            },
+            "An Air of Debonair": {
+                "stringNote": "👜🔷",
+                "price": {
+                    "keys": 0,
+                    "metal": 30
+                }
+            },
+            "Balaclavas Are Forever": {
+                "stringNote": "👜🔷",
+                "price": {
+                    "keys": 0,
+                    "metal": 30
+                }
+            },
+            "Operator's Overalls": {
+                "stringNote": "👜🔷",
+                "price": {
+                    "keys": 0,
+                    "metal": 30
+                }
+            },
+            "Cream Spirit": {
+                "stringNote": "🍘🥮",
+                "price": {
+                    "keys": 0,
+                    "metal": 30
+                }
+            },
+            "Team Spirit": {
+                "stringNote": "🔵🔴",
+                "price": {
+                    "keys": 0,
+                    "metal": 30
+                }
+            },
+            "The Value of Teamwork": {
+                "stringNote": "🎎",
+                "price": {
+                    "keys": 0,
+                    "metal": 30
+                }
+            },
+            "Waterlogged Lab Coat": {
+                "stringNote": "🎏",
+                "price": {
+                    "keys": 0,
+                    "metal": 30
+                }
+            },
+            "Legacy Paint": {
+                "stringNote": "🔵⛔",
+                "price": {
+                    "keys": 4,
+                    "metal": 0
+                }
+            }
+        },
+        "strangeParts": {
+            "description":  {
+                "type": "string",
+                "default": "",
+                "details": "Custom string to be shown in listing note if details.highValue.showStrangeParts set to true",
+                "note":"",
+                "parameters":"",
+                "example":""
+            },
+            "Robots Destroyed": "",
+            "Kills": "",
+            "Airborne Enemy Kills": "",
+            "Damage Dealt": "",
+            "Dominations": "",
+            "Snipers Killed": "",
+            "Buildings Destroyed": "",
+            "Projectiles Reflected": "",
+            "Headshot Kills": "",
+            "Medics Killed": "",
+            "Fires Survived": "",
+            "Teammates Extinguished": "",
+            "Freezecam Taunt Appearances": "",
+            "Spies Killed": "",
+            "Allied Healing Done": "",
+            "Sappers Removed": "",
+            "Players Hit": "",
+            "Gib Kills": "",
+            "Scouts Killed": "",
+            "Taunt Kills": "",
+            "Point Blank Kills": "",
+            "Soldiers Killed": "",
+            "Long-Distance Kills": "",
+            "Giant Robots Destroyed": "",
+            "Critical Kills": "",
+            "Demomen Killed": "",
+            "Unusual-Wearing Player Kills": "",
+            "Assists": "",
+            "Medics Killed That Have Full ÜberCharge": "",
+            "Cloaked Spies Killed": "",
+            "Engineers Killed": "",
+            "Kills While Explosive-Jumping": "",
+            "Kills While Low Health": "",
+            "Burning Player Kills": "",
+            "Kills While Invuln ÜberCharged": "",
+            "Posthumous Kills": "",
+            "Not Crit nor MiniCrit Kills": "",
+            "Full Health Kills": "",
+            "Killstreaks Ended": "",
+            "Defenders Killed": "",
+            "Revenges": "",
+            "Robot Scouts Destroyed": "",
+            "Heavies Killed": "",
+            "Tanks Destroyed": "",
+            "Kills During Halloween": "",
+            "Pyros Killed": "",
+            "Submerged Enemy Kills": "",
+            "Kills During Victory Time": "",
+            "Taunting Player Kills": "",
+            "Robot Spies Destroyed": "",
+            "Kills Under A Full Moon": "",
+            "Robots Killed During Halloween": ""
+        }
+    }
+}
