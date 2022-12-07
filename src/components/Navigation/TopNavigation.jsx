@@ -56,7 +56,7 @@ const Navigate = () => {
           onClick={() => {
             setShow((pre) => !pre);
           }}
-          className={`p-2 w-1/3 m-2 rounded-xl z-0 group text-sm text-center text-lime-500`}
+          className={`p-2 m-2 rounded-xl group text-sm text-center text-lime-500`}
         >
           {currentItem}
         </button>
@@ -64,7 +64,7 @@ const Navigate = () => {
           className={`absolute ${
             show ? "visible" : "invisible"
           }  p-2 bg-slate-700 h-52 overflow-y-auto border-lime-500 drop-shadow-md 
-        translate-x-1/2 z-10 right-1/2 scrollbar-thin scrollbar-thumb-slate-500 scrollbar-track-transparent
+        translate-x-1/2 z-10 right-1/2 scrollbar-thin scrollbar-thumb-slate-500 scrollbar-thumb-rounded-md scrollbar-track-transparent
         rounded-lg`}
         >
           {keyList.map((item, index) => (
