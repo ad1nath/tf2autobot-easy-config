@@ -1,6 +1,6 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 import { useEffect } from "react";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { optionActions } from "../../store/options-ctx";
@@ -50,7 +50,7 @@ const Navigate = () => {
       >
         {lastItem || "Jump to end"}
       </button>
-      <ChevronLeftIcon className="h-5 w-5 self-center " />
+      <ChevronLeftIcon className="h-5 w-5 self-center" />
       <div className="group  relative">
         <button
           onClick={() => {
