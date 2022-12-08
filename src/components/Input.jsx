@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { optionActions } from "../store/options-ctx";
+
 import MultipleSelect from "./SelectList/MultipleSelect";
 import Dropdown from "./Dropdown";
 import DescriptionButton from "./Description/DescriptionButton";
@@ -11,14 +12,13 @@ const Input = ({ type, label, value, id, isChecked, isList, description }) => {
   const dispatch = useDispatch();
   const keyValue = description ? description["keyvalues"] : null;
 
-  //function to set copieddata to clipboard
-  const copyData = () => {
-    navigator.clipboard.writeText(copiedData);
-  };
-
   useEffect(() => {
     setCopiedData(`!config ${id.replaceAll("_", ".")}=${value}`);
   }, [id]);
+
+  const copyData = () => {
+    navigator.clipboard.writeText(copiedData);
+  };
 
   const handleChange = (event) => {
     let inputValue = event.target.value;
@@ -37,12 +37,10 @@ const Input = ({ type, label, value, id, isChecked, isList, description }) => {
     );
   };
 
-  //this functions sets current description
   const handleEnter = () => {
     dispatch(optionActions.setCurrentDescription({ id, description }));
   };
 
-  //function to get tags from the createList component
   const handleTags = (data) => {
     setCopiedData(`!config ${id.replaceAll("_", ".")}=${JSON.stringify(data)}`);
     dispatch(
@@ -53,7 +51,6 @@ const Input = ({ type, label, value, id, isChecked, isList, description }) => {
     );
   };
 
-  //gets data from select component and sets it to copied data and updates edited options
   const handleSelect = (data) => {
     setCopiedData(`!config ${id.replaceAll("_", ".")}=${data}`);
     dispatch(

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
-const Dropdown = ({ id, options, defaultValue, sendSelected }) => {
+const Dropdown = ({ options, defaultValue, sendSelected }) => {
   const [show, setShow] = useState(false);
   const [selected, setSelected] = useState(
     options.find((option) => {
@@ -21,7 +21,6 @@ const Dropdown = ({ id, options, defaultValue, sendSelected }) => {
         onClick={() => {
           setShow((pre) => !pre);
         }}
-        // className="bg-lime-800 relative "
         className={`inline-flex group p-1 px-2 bg-slate-700 align-center hover:bg-slate-900 active:bg-slate-900  border-slate-900 border-1 rounded-md text-sm text-center text-slate-200`}
       >
         {selected}
@@ -37,7 +36,6 @@ const Dropdown = ({ id, options, defaultValue, sendSelected }) => {
         }  py-2 bg-slate-700 mt-2 shadow-md  max-h-52 h-max overflow-y-auto
           scrollbar-thin scrollbar-thumb-slate-500 scrollbar-track-transparent border scrollbar-thumb-rounded-lg
           rounded-lg`}
-        // className="absolute  bg-slate-900"
       >
         {options.map((item) => (
           <li

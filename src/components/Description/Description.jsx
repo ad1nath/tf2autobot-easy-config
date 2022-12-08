@@ -48,9 +48,6 @@ const Description = () => {
         {currentDescription.parameters && (
           <Parameters parameters={currentDescription.parameters} />
         )}
-        {/* {currentDescription.options && (
-          <Parameters parameters={currentDescription.options} isList={true} />
-        )} */}
         {currentDescription.example && (
           <div className="mb-2">
             <h3 className="font-bold text-slate-100">Example</h3>

@@ -1,6 +1,5 @@
 import Key from "./Key";
 import { useSelector } from "react-redux";
-import { memo } from "react";
 
 const KeyList = () => {
   const options = useSelector((state) => state.options.options);
@@ -10,4 +9,4 @@ const KeyList = () => {
   return <ul className="p-1">{keyList}</ul>;
 };
 
-export default memo(KeyList);
+export default KeyList;

@@ -116,7 +116,7 @@
             "duel": {"description":  {
                 "type": "boolean",
                 "default": "true",
-                "details": "f set to false, your bot will buy Dueling Mini-Games regardless of how many uses are left. Otherwise, it will only accept full Dueling Mini-Games (5 uses left).",
+                "details": "If set to false, your bot will buy Dueling Mini-Games regardless of how many uses are left. Otherwise, it will only accept full Dueling Mini-Games (5 uses left).",
                 "note":"",
                 "parameters":"",
                 "example":""
