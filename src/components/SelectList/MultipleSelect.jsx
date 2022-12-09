@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useEffect, useState } from "react";
 import List from "./List";
 import TagList from "./TagList";
@@ -6,7 +7,6 @@ const MultipleSelect = ({ options, id, sendTags, defaultValue }) => {
   const [tags, setTags] = useState(defaultValue);
   const [value, setValue] = useState("");
   let optionsList = [];
-
   const addTag = (tag) => {
     if (tag === "no result" || tag === "") return;
     tag = tag.trim();
@@ -28,9 +28,9 @@ const MultipleSelect = ({ options, id, sendTags, defaultValue }) => {
     ));
   }
 
-  const removeTag = (tag) => {
+  const removeTag = useCallback((tag) => {
     setTags((pre) => pre.filter((item) => item !== tag));
-  };
+  }, []);
 
   useEffect(() => {
     sendTags(tags);
@@ -76,7 +76,6 @@ const MultipleSelect = ({ options, id, sendTags, defaultValue }) => {
             onChange={handleChange}
             onBlur={handleBlur}
             onKeyUp={handleKeyPress}
-            // className="py-0.5 ml-2 flex outline-none text-black w-50 bg-white flex-1"
             className="
           bg-slate-900 text-slate-200
            hover:outline-none outline-none

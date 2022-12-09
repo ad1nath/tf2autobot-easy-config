@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { optionActions } from "../store/options-ctx";
 
 import MultipleSelect from "./SelectList/MultipleSelect";
@@ -9,11 +9,14 @@ import CopyButton from "./CopyButton";
 
 const Input = ({ type, label, value, id, isChecked, description }) => {
   const [copiedData, setCopiedData] = useState("");
+  const currentValue = useSelector((state) => state.options.currentValues[id]);
   const dispatch = useDispatch();
   const keyValue = description ? description["keyvalues"] : null;
 
   useEffect(() => {
-    setCopiedData(`!config ${id.replaceAll("_", ".")}=${value}`);
+    let data = currentValue === undefined ? value : currentValue;
+    if (Array.isArray(data)) data = JSON.stringify(data);
+    setCopiedData(`!config ${id.replaceAll("_", ".")}=${data}`);
   }, [id]);
 
   const copyData = () => {
@@ -85,7 +88,7 @@ const Input = ({ type, label, value, id, isChecked, description }) => {
           label={label}
           id={id}
           sendTags={handleTags}
-          defaultValue={value}
+          defaultValue={currentValue || value}
           options={description ? description.options : null}
         />
       )}
@@ -105,16 +108,16 @@ const Input = ({ type, label, value, id, isChecked, description }) => {
           ${type === "text" ? "flex-1 order-4 md:order-none" : ""}
           `}
           type={type}
-          defaultChecked={isChecked}
+          defaultChecked={currentValue === undefined ? isChecked : currentValue}
           id={id}
-          defaultValue={value}
+          defaultValue={currentValue || value}
         />
       )}
       {keyValue && (
         <Dropdown
           options={keyValue}
           id={id}
-          defaultValue={value}
+          defaultValue={currentValue || value}
           sendSelected={handleSelect}
         />
       )}

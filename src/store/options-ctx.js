@@ -2,12 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     options: [],
-    displayOptions: [],
+    editedOptions: [],
     activeItem: 'miscSettings',
     currentPath: '',
     currentDescription: '',
     descriptions: [],
     toggleDescription: false,
+    currentValues: {}
 }
 
 const set = (obj, str, val) => {
@@ -24,14 +25,15 @@ const optionSlice = createSlice({
     reducers: {
         editOption(state, action) {
             const { optionValue, optionKeys } = action.payload
-            set(state.options, optionKeys, optionValue)
+            set(state.editedOptions, optionKeys, optionValue)
+            state.currentValues[optionKeys] = optionValue
         },
         makeActive(state, action) {
             state.activeItem = action.payload
         },
         setOptions(state, action) {
             state.options = action.payload
-            state.displayOptions = action.payload
+            state.editedOptions = action.payload
         },
         setDescriptions(state, action) {
             state.descriptions = action.payload

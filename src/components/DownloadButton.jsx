@@ -2,7 +2,7 @@ import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 import { useSelector } from "react-redux";
 
 const DownloadButton = () => {
-  const editedOptions = useSelector((state) => state.options.options);
+  const editedOptions = useSelector((state) => state.options.editedOptions);
   const downloadFile = () => {
     const fileName = "options.json";
     const json = JSON.stringify(editedOptions, null, 4);
