@@ -7,7 +7,7 @@ import Dropdown from "./Dropdown";
 import DescriptionButton from "./Description/DescriptionButton";
 import CopyButton from "./CopyButton";
 
-const Input = ({ type, label, value, id, isChecked, isList, description }) => {
+const Input = ({ type, label, value, id, isChecked, description }) => {
   const [copiedData, setCopiedData] = useState("");
   const dispatch = useDispatch();
   const keyValue = description ? description["keyvalues"] : null;
@@ -19,7 +19,6 @@ const Input = ({ type, label, value, id, isChecked, isList, description }) => {
   const copyData = () => {
     navigator.clipboard.writeText(copiedData);
   };
-
   const handleChange = (event) => {
     let inputValue = event.target.value;
     if (event.target.type === "number") {
@@ -81,16 +80,17 @@ const Input = ({ type, label, value, id, isChecked, isList, description }) => {
         onClick={copyData}
         classes={`mr-1 ${type === "checkbox" && "order-3 ml-3"}`}
       />
-      {isList && (
+      {type === "list" && (
         <MultipleSelect
           label={label}
           id={id}
           sendTags={handleTags}
+          defaultValue={value}
           options={description ? description.options : null}
         />
       )}
 
-      {!isList && !keyValue && (
+      {type !== "list" && !keyValue && (
         <input
           onChange={handleChange}
           className={`

@@ -17,14 +17,16 @@ const Items = ({ items, title, item_id }) => {
     const itemType = typeof items[item];
     const id = `${item_id || active}_${item}`;
     let type;
-
-    itemType === "string" || items[item].length === 0
+    console.log(typeof items[item]);
+    itemType === "string"
       ? (type = "text")
       : itemType === "boolean"
       ? (type = "checkbox")
       : itemType === "number"
       ? (type = "number")
-      : (type = null);
+      : Array.isArray(items[item])
+      ? (type = "list")
+      : type === "null";
     if (!type) {
       return <Items items={items[item]} title={item} item_id={id} key={id} />;
     } else {
@@ -36,7 +38,6 @@ const Items = ({ items, title, item_id }) => {
           label={toLabel(item)}
           value={items[item]}
           id={id}
-          isList={itemType === "object" && items[item].length === 0}
           isChecked={type === "checkbox" && items[item]}
         />
       );

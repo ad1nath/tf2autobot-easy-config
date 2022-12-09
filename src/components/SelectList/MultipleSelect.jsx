@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import List from "./List";
 import TagList from "./TagList";
 
-const MultipleSelect = ({ options, id, sendTags }) => {
-  const [tags, setTags] = useState([]);
+const MultipleSelect = ({ options, id, sendTags, defaultValue }) => {
+  const [tags, setTags] = useState(defaultValue);
   const [value, setValue] = useState("");
   let optionsList = [];
 

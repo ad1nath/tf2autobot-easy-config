@@ -24,7 +24,8 @@ const optionSlice = createSlice({
     reducers: {
         editOption(state, action) {
             const { optionValue, optionKeys } = action.payload
-            set(state.editedOptions, optionKeys, optionValue)
+            // set(state.editedOptions, optionKeys, optionValue)
+            set(state.options, optionKeys, optionValue)
         },
         makeActive(state, action) {
             state.activeItem = action.payload

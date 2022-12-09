@@ -1,4 +1,5 @@
 export const getClosest = (path, obj) => {
+    console.log(path)
     let _path = path;
     path = path.split("_");
     while (path.length > 0) {
