@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 import { getClosest, toLabel } from "../utils/utils";
 
 const Items = ({ items, title, item_id }) => {
-  const options = useSelector((state) => state.options.options);
   const descriptions = useSelector((state) => state.options.descriptions);
   const active = useSelector((state) => state.options.activeItem);
+  const options = useSelector((state) => state.options.options);
 
   if (options.length < 1 || descriptions.length < 1) {
     return (
@@ -44,6 +44,11 @@ const Items = ({ items, title, item_id }) => {
   });
   return (
     <>
+      {!title && (
+        <h2 className="text-xl font-medium p-5 rounded-lg bg-slate-900 text-lime-500 hidden md:block ">
+          {toLabel(active)}
+        </h2>
+      )}
       {title && (
         <h2
           className=" my-1.5 mt-2 p-1 pl-2  font-[500]   

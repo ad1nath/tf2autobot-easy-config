@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { optionActions } from "./store/options-ctx";
-import { toLabel } from "./utils/utils";
 
 import Description from "./components/Description/Description";
 import DownloadButton from "./components/DownloadButton";
@@ -13,7 +12,6 @@ import Footer from "./components/Footer";
 
 function App() {
   const dispatch = useDispatch();
-  const active = useSelector((state) => state.options.activeItem);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -53,11 +51,13 @@ function App() {
           className="  shadow-black shadow-2xl
         md:p-10 p-2 md:w-2/5 w-full bg-slate-800 rounded-lg my-3 min-h-screen"
         >
-          <h2 className="text-xl font-medium p-5 rounded-lg bg-slate-900 text-lime-500 hidden md:block ">
-            {error ? "ERROR" : toLabel(active)}
-          </h2>
           {error ? (
-            <p className="text-slate-200 p-2">{error.message}</p>
+            <>
+              <h2 className="text-xl font-medium p-5 rounded-lg bg-slate-900 text-lime-500 hidden md:block ">
+                ERROR
+              </h2>
+              <p className="text-slate-200 p-2">{error.message}</p>
+            </>
           ) : (
             <Items />
           )}
