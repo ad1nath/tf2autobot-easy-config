@@ -7,7 +7,7 @@ import { optionActions } from "../../store/options-ctx";
 
 const Navigate = () => {
   const [show, setShow] = useState(false);
-  const options = useSelector((state) => state.options.options);
+  const options = useSelector((state) => state.options.displayOptions);
   const keyList = Object.keys(options);
   const [current, setCurrent] = useState(0);
   const dispatch = useDispatch();
