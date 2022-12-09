@@ -67,6 +67,13 @@ const Description = () => {
       </div>
     );
   }
+  if (currentDescription === null) {
+    content = (
+      <p className="p-2 bg-slate-600 mt-5 rounded-lg text-slate-100">
+        No description available for this property.
+      </p>
+    );
+  }
 
   return (
     <>
