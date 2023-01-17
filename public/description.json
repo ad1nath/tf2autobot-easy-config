@@ -199,6 +199,24 @@
                 "parameters":"",
                 "example":""
             }}
+        },
+        "prefixes": {
+            "steam": {"description":  {
+                "type": "string",
+                "default": "!",
+                "details": "Set a custom prefix for your steam command.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }},
+            "discord": {"description":  {
+                "type": "string",
+                "default": "!",
+                "details": "Set a custom prefix for your discord command.",
+                "note":"",
+                "parameters":"",
+                "example":""
+            }}
         }
     },
     "sendAlert": {
