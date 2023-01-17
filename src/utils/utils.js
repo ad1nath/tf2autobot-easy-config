@@ -2,7 +2,12 @@ export const getClosest = (path, obj) => {
     let _path = path;
     path = path.split("_");
     while (path.length > 0) {
-        let desc = path.reduce((o, i) => o[i], obj);
+        let desc;
+        try {
+            desc = path.reduce((o, i) => o[i], obj);
+        } catch(e) {
+            return null
+        }
         if (!desc) return null
         if (desc["description"]) {
             let _desc = { ...desc["description"] };
