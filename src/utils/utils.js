@@ -1,8 +1,11 @@
 export const getClosest = (path, obj) => {
     let _path = path;
     path = path.split("_");
+    console.log(path)
     while (path.length > 0) {
         let desc = path.reduce((o, i) => o[i], obj);
+        if (!desc) return null
+        console.log(desc)
         if (desc["description"]) {
             let _desc = { ...desc["description"] };
             const defaultValue = _path.split("_").reduce((o, i) => o[i], obj);
