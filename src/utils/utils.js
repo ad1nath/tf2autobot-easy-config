@@ -8,8 +8,7 @@ export const getClosest = (path, obj) => {
         } catch(e) {
             return null
         }
-        if (!desc) return null
-        if (desc["description"]) {
+        if (desc?.description) {
             let _desc = { ...desc["description"] };
             const defaultValue = _path.split("_").reduce((o, i) => o[i], obj);
             if (_desc && typeof defaultValue !== "object") {
