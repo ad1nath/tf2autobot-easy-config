@@ -30,7 +30,7 @@ const Navigate = () => {
 	};
 
 	const handleMiddle = (e) => {
-		setCurrent(e.target.value);
+		setCurrent(e.target.id);
 		setShow((pre) => !pre);
 	};
 	const handleNext = () => {
@@ -74,7 +74,7 @@ const Navigate = () => {
 								index === current ? "text-lime-600" : ""
 							} `}
 							key={item}
-							value={index}
+							id={index}
 						>
 							{item}
 						</li>
