@@ -6,7 +6,6 @@ const KeyList = () => {
 	const options = useSelector((state) => state.options.options);
 	const dispatch = useDispatch();
 	const makeActive = (e) => {
-		console.log(e.target.id);
 		dispatch(optionActions.makeActive(e.target.id));
 	};
 
