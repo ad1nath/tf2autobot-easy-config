@@ -6,6 +6,7 @@ const KeyList = () => {
 	const options = useSelector((state) => state.options.options);
 	const dispatch = useDispatch();
 	const makeActive = (e) => {
+		scrollTo({ behavior: "smooth", top: 72 });
 		dispatch(optionActions.makeActive(e.target.id));
 	};
 

@@ -18,6 +18,8 @@ const Navigate = () => {
 
 	useEffect(() => {
 		if (keyList.length > 0) {
+			scrollTo({ behavior: "smooth", top: 72 });
+			scroll;
 			dispatch(optionActions.makeActive(keyList[current]));
 		}
 	}, [current]);
