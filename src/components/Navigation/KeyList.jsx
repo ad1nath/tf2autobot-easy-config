@@ -7,7 +7,9 @@ const KeyList = () => {
 	const dispatch = useDispatch();
 	const makeActive = (e) => {
 		scrollTo({ behavior: "smooth", top: 72 });
-		dispatch(optionActions.makeActive(e.target.id));
+		if (e?.target?.id) {
+			dispatch(optionActions.makeActive(e?.target?.id));
+		}
 	};
 
 	const keyList = Object.keys(options).map((option) => (
