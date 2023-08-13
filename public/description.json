@@ -194,7 +194,7 @@
             "enable": {"description":  {
                 "type": "boolean",
                 "default": "true",
-                "details": "Set this to true if you want your bot to autoprice manually priced items once they are sold.",
+                "details": "Set to true if you want the bot to automatically request price checking (similar to the !pricecheck command) on every item involved in a successful trade.",
                 "note":"",
                 "parameters":"",
                 "example":""
