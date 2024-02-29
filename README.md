@@ -20,7 +20,7 @@ A user-friendly web tool that allows users to effortlessly generate configuratio
 
 ## Acknowledgments
 
-- Inspired by the now outdated [tf2autobot-config](https://link-to-tf2autobot-config).
+- Inspired by the now outdated [tf2autobot-config](https://bonfire.github.io/tf2autobot-config/).
 
  
  
