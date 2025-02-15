@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { optionActions } from "./store/options-ctx";
+import { optionActions } from "@/store/options-ctx";
 
-import Description from "./components/Description/Description";
-import DownloadButton from "./components/DownloadButton";
-import Items from "./components/Items";
-import KeyList from "./components/Navigation/KeyList";
-import Navigate from "./components/Navigation/TopNavigation";
-import SideBar from "./components/Description/SideBar";
-import Footer from "./components/Footer";
+import Description from "@/components/Description/Description";
+import DownloadButton from "@/components/DownloadButton";
+import Items from "@/components/Items";
+import KeyList from "@/components/Navigation/KeyList";
+import Navigate from "@/components/Navigation/TopNavigation";
+import SideBar from "@/components/Description/SideBar";
+import Footer from "@/components/Footer";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
-function App() {
+function Generate() {
   const dispatch = useDispatch();
   const [error, setError] = useState("");
 
@@ -34,9 +35,11 @@ function App() {
   return (
     <>
       <header className="p-5  bg-slate-900 flex justify-between">
-        <h1 className=" text-slate-100 font-semibold text-xl">
-          TF2Autobot EasyConfig
-        </h1>
+        <Link to="/">
+          <h1 className=" text-slate-100 font-bold text-xl">
+            TF2Autobot EasyConfig
+          </h1>
+        </Link>
         <DownloadButton />
       </header>
       <Navigate />
@@ -75,4 +78,6 @@ function App() {
   );
 }
 
-export default App;
+export const Route = createFileRoute("/generate")({
+  component: Generate,
+});
