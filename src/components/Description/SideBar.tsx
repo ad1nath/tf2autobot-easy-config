@@ -2,13 +2,13 @@ import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import Description from "./Description";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { optionActions } from "../../store/options-ctx";
+import useOptions from "../../store/useOptions";
 
 export default function SideBar() {
-  const toggle = useSelector((state) => state.options.toggleDescription);
+  const { toggleDescription: toggle } = useOptions();
   const dispatch = useDispatch();
-
   return (
     <Transition.Root show={toggle} as={Fragment}>
       <Dialog

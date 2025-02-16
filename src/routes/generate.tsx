@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { optionActions } from "@/store/options-ctx";
 
-import Description from "@/components/Description/Description";
-import DownloadButton from "@/components/DownloadButton";
-import Items from "@/components/Items";
-import KeyList from "@/components/Navigation/KeyList";
-import Navigate from "@/components/Navigation/TopNavigation";
-import SideBar from "@/components/Description/SideBar";
-import Footer from "@/components/Footer";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import DownloadButton from "../components/DownloadButton";
+import KeyList from "../components/Navigation/KeyList";
+import Navigate from "../components/Navigation/TopNavigation";
+import Description from "../components/Description/Description";
+import SideBar from "../components/Description/SideBar";
+import Footer from "../components/Footer";
+import { optionActions } from "../store/options-ctx";
+import Items from "../components/Items";
 
 function Generate() {
   const dispatch = useDispatch();

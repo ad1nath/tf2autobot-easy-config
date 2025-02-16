@@ -1,11 +1,9 @@
-import { useSelector } from "react-redux";
 import Parameters from "./Parameters";
+import useOptions from "../../store/useOptions";
 
 const Description = () => {
-  const currentDescription = useSelector(
-    (state) => state.options.currentDescription
-  );
-  const currentPath = useSelector((state) => state.options.currentPath);
+  const { currentDescription, currentPath } = useOptions();
+
   let content = (
     <p className="p-2 bg-slate-600 rounded-lg text-slate-100">
       Hover on a property to get a brief description

@@ -1,6 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import optionReducer from "./options-ctx";
+import optionReducer, { OptionState } from "./options-ctx";
 
-const store = configureStore({ reducer: { options: optionReducer } });
+export interface RootState {
+  options: OptionState;
+}
+const store = configureStore<RootState>({
+  reducer: { options: optionReducer },
+});
 
 export default store;

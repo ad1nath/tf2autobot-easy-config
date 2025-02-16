@@ -5,8 +5,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-import React from "react";
-import Footer from "@/components/Footer";
+import Footer from "../components/Footer";
 
 function Index() {
   return (
@@ -62,7 +61,15 @@ function Index() {
   );
 }
 
-function FeatureCard({ number, title, description }) {
+function FeatureCard({
+  number,
+  title,
+  description,
+}: {
+  number: string;
+  title: string;
+  description: string;
+}) {
   return (
     <div className="bg-gray-800 p-6 rounded-lg text-center">
       <div className="flex-shrink-0 w-8 h-8 bg-lime-600 rounded-full flex items-center justify-center font-bold">
