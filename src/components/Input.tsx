@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { optionActions } from "../store/options-ctx";
+import { useDispatch } from "react-redux";
 
 import MultipleSelect from "./SelectList/MultipleSelect";
 import Dropdown from "./Dropdown";
 import DescriptionButton from "./Description/DescriptionButton";
 import CopyButton from "./CopyButton";
+import useOptions from "../store/useOptions";
+import { optionActions } from "../store/options-ctx";
 
 const Input = ({ type, label, value, id, isChecked, description }) => {
   const [copiedData, setCopiedData] = useState("");
-  const currentValue = useSelector((state) => state.options.currentValues[id]);
+  const { currentValues } = useOptions();
+  const currentValue = currentValues[id];
   const dispatch = useDispatch();
   const keyValue = description ? description["keyvalues"] : null;
 

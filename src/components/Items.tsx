@@ -1,11 +1,10 @@
 import Input from "./Input";
 import { useSelector } from "react-redux";
 import { getClosest, toLabel } from "../utils/utils";
+import useOptions from "../store/useOptions";
 
 const Items = ({ items, title, item_id }) => {
-  const descriptions = useSelector((state) => state.options.descriptions);
-  const active = useSelector((state) => state.options.activeItem);
-  const options = useSelector((state) => state.options.options);
+  const { descriptions, activeItem: active, options } = useOptions();
 
   if (options.length < 1 || descriptions.length < 1) {
     return (
@@ -20,12 +19,12 @@ const Items = ({ items, title, item_id }) => {
     itemType === "string"
       ? (type = "text")
       : itemType === "boolean"
-      ? (type = "checkbox")
-      : itemType === "number"
-      ? (type = "number")
-      : Array.isArray(items[item])
-      ? (type = "list")
-      : type === "null";
+        ? (type = "checkbox")
+        : itemType === "number"
+          ? (type = "number")
+          : Array.isArray(items[item])
+            ? (type = "list")
+            : type === "null";
     if (!type) {
       return <Items items={items[item]} title={item} item_id={id} key={id} />;
     } else {
