@@ -19,8 +19,8 @@ export interface OptionState {
   currentValues: any;
 }
 const initialState: OptionState = {
-  options: {},
-  editedOptions: {},
+  options: [],
+  editedOptions: [],
   activeItem: "miscSettings",
   currentPath: "",
   currentDescription: undefined,
