@@ -31,6 +31,8 @@ function Generate() {
   const dispatch = useDispatch();
   const [error, setError] = useState("");
   useEffect(() => {
+    dispatch(optionActions.resetState());
+
     fetch(botOptions[bot])
       .then((response) => response.json())
       .then((data) => {
@@ -108,6 +110,7 @@ function Generate() {
 export const Route = createFileRoute("/generate")({
   component: Generate,
   validateSearch: (search: Record<string, unknown>) => ({
+    ...search,
     bot:
       typeof search.bot === "string" &&
       Object.keys(botOptions).includes(search.bot as Bot)
