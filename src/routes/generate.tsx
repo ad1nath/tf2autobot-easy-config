@@ -56,7 +56,7 @@ function Generate() {
         <div className="flex gap-2">
           <Dropdown
             defaultValue={bot}
-            sendSelected={(value) => {
+            onValueChange={(value) => {
               navigate({
                 search: () => ({
                   bot: value,
