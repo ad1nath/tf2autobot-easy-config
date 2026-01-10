@@ -1,58 +1,106 @@
-import { useState } from "react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import * as React from "react";
+import { Select } from "@base-ui/react/select";
+import {
+  CheckIcon,
+  ChevronDownIcon,
+  ChevronUpDownIcon,
+} from "@heroicons/react/20/solid";
 
-const Dropdown = ({ options, defaultValue, sendSelected }) => {
-  const [show, setShow] = useState(false);
-  const [selected, setSelected] = useState(
-    options.find((option) => {
-      return option.value === defaultValue;
-    }).name
-  );
-
-  const handleSelect = (item) => {
-    setSelected(item.name);
-    setShow((pre) => !pre);
-    sendSelected(item.value);
-  };
-
+export default function Dropdown({ options, defaultValue, onValueChange }) {
+  const items = options.map((item) => {
+    return {
+      label: item.name,
+      value: item.value,
+    };
+  });
   return (
-    <div>
-      <button
-        onClick={() => {
-          setShow((pre) => !pre);
-        }}
-        className={`inline-flex group p-1 px-2 bg-slate-700 align-center hover:bg-slate-900 active:bg-slate-900  border-slate-900 border-1 rounded-md text-sm text-center text-slate-200`}
+    <Select.Root
+      onValueChange={onValueChange}
+      defaultValue={defaultValue}
+      items={items}
+    >
+      <Select.Trigger
+        className="
+          group inline-flex h-8 min-w-36 items-center justify-between gap-2
+          rounded-md bg-slate-700 px-3 text-sm text-slate-200
+          border border-slate-900
+          hover:bg-slate-800 active:bg-slate-900
+          focus-visible:outline focus-visible:outline-2 focus-visible:outline-lime-500
+          data-[popup-open]:bg-slate-900
+        "
       >
-        {selected}
-        <ChevronDownIcon
-          className={`w-5 h-5 ml-2 group-hover:text-lime-500 transition-transform  duration-300 text-black ${
-            show ? "rotate-180" : ""
-          }`}
-        />
-      </button>
-      <ul
-        className={`absolute border-slate-900 border-2 ${
-          show ? "visible" : "invisible"
-        }  py-2 bg-slate-700 mt-2 shadow-md  max-h-52 h-max overflow-y-auto
-          scrollbar-thin scrollbar-thumb-slate-500 scrollbar-track-transparent border scrollbar-thumb-rounded-lg
-          rounded-lg`}
-      >
-        {options.map((item) => (
-          <li
-            className={`text-slate-lime px-2 pt-0.5 hover:bg-slate-800 hover:cursor-pointer hover:text-lime-500 ${
-              item.name === selected ? "text-lime-600 " : ""
-            }`}
-            key={item.name}
-            name={item.name}
-            value={item.value}
-            onMouseDown={handleSelect.bind(this, item)}
+        <Select.Value />
+        <Select.Icon
+          className="
+            transition-transform duration-300
+            group-data-[popup-open]:rotate-180
+            text-slate-300 group-hover:text-lime-500
+          "
+        >
+          <ChevronDownIcon className="h-5 w-5" />
+        </Select.Icon>
+      </Select.Trigger>
+      <Select.Portal>
+        <Select.Positioner className="z-10" sideOffset={8}>
+          <Select.Popup
+            className="
+              min-w-[var(--anchor-width)]
+              rounded-lg border border-slate-900
+              bg-slate-700 shadow-lg
+              overflow-hidden
+              outline-none
+              data-[starting-style]:opacity-0 data-[ending-style]:opacity-0
+              data-[starting-style]:scale-95 data-[ending-style]:scale-95
+              transition-[opacity,transform]
+            "
           >
-            {item.name}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+            <Select.ScrollUpArrow className="top-0 z-[1] flex h-4 w-full cursor-default items-center justify-center rounded-md bg-[canvas] text-center text-xs before:absolute data-[side=none]:before:top-[-100%] before:left-0 before:h-full before:w-full before:content-['']" />
+            <Select.List className="relative py-1 scroll-py-6 overflow-y-auto max-h-[var(--available-height)]">
+              {items.map(({ label, value }) => (
+                <Select.Item
+                  key={label}
+                  value={value}
+                  className="
+                  grid grid-cols-[0.75rem_1fr] items-center gap-2
+                  py-2 pr-4 pl-2.5
+                  text-sm leading-4
+                  select-none outline-none
+                  cursor-pointer
+                text-slate-200
+                  /* highlighted state */
+                  data-[highlighted]:relative
+                  data-[highlighted]:z-0
+                  data-[highlighted]:text-lime-400
+                  data-[highlighted]:before:absolute
+                  data-[highlighted]:before:inset-x-1
+                  data-[highlighted]:before:inset-y-0
+                  data-[highlighted]:before:-z-10
+                  data-[highlighted]:before:rounded-sm
+                  data-[highlighted]:before:bg-gray-900
+                  data-[selected]:text-lime-400
+                  /* group variants */
+                  group-data-[side=none]:pr-12
+                  group-data-[side=none]:text-base
+                  group-data-[side=none]:leading-4
 
-export default Dropdown;
+                  /* coarse pointer devices */
+                  pointer-coarse:py-2.5
+                  pointer-coarse:text-[0.925rem]
+                "
+                >
+                  <Select.ItemIndicator className="col-start-1">
+                    <CheckIcon className="size-3" />
+                  </Select.ItemIndicator>
+                  <Select.ItemText className="col-start-2">
+                    {label}
+                  </Select.ItemText>
+                </Select.Item>
+              ))}
+            </Select.List>
+            <Select.ScrollDownArrow className="bottom-0 z-[1] flex h-4 w-full cursor-default items-center justify-center rounded-md bg-[canvas] text-center text-xs before:absolute before:left-0 before:h-full before:w-full before:content-[''] bottom-0 data-[side=none]:before:bottom-[-100%]" />
+          </Select.Popup>
+        </Select.Positioner>
+      </Select.Portal>
+    </Select.Root>
+  );
+}

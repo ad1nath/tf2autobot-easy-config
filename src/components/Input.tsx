@@ -120,7 +120,7 @@ const Input = ({ type, label, value, id, isChecked, description }) => {
           options={keyValue}
           id={id}
           defaultValue={currentValue || value}
-          sendSelected={handleSelect}
+          onValueChange={handleSelect}
         />
       )}
     </li>

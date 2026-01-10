@@ -55,8 +55,8 @@ const optionSlice = createSlice({
       state.activeItem = action.payload;
     },
     setOptions(state, action) {
-      state.options = action.payload;
-      state.editedOptions = action.payload;
+      state.options = structuredClone(action.payload);
+      state.editedOptions = structuredClone(action.payload);
     },
     setDescriptions(state, action) {
       state.descriptions = action.payload;
@@ -65,6 +65,9 @@ const optionSlice = createSlice({
       state.toggleDescription = !state.toggleDescription;
     },
 
+    resetState(state) {
+      Object.assign(state, initialState);
+    },
     setCurrentDescription(state, action) {
       const { id, description } = action.payload;
       state.currentDescription = description || null;
