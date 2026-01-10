@@ -10,15 +10,28 @@ import SideBar from "../components/Description/SideBar";
 import Footer from "../components/Footer";
 import { optionActions } from "../store/options-ctx";
 import Items from "../components/Items";
+import Dropdown from "../components/Dropdown";
 
+const botOptions = {
+  Tf2Autobot:
+    "https://raw.githubusercontent.com/TF2Autobot/tf2autobot/master/.example/options.json",
+  PriceDB:
+    "https://raw.githubusercontent.com/TF2-Price-DB/tf2autobot-pricedb/master/.example/options.json",
+};
+
+type Bot = keyof typeof botOptions;
+const selectOptions = Object.keys(botOptions).map((o) => ({
+  name: o,
+  value: o,
+}));
 function Generate() {
+  const { bot }: { bot: Bot } = Route.useSearch();
+  const navigate = Route.useNavigate();
+
   const dispatch = useDispatch();
   const [error, setError] = useState("");
-
   useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/TF2Autobot/tf2autobot/master/.example/options.json"
-    )
+    fetch(botOptions[bot])
       .then((response) => response.json())
       .then((data) => {
         dispatch(optionActions.setOptions(data));
@@ -30,7 +43,7 @@ function Generate() {
         dispatch(optionActions.setDescriptions(data));
       })
       .catch((err) => setError(err));
-  }, []);
+  }, [bot]);
 
   return (
     <>
@@ -40,7 +53,20 @@ function Generate() {
             TF2Autobot EasyConfig
           </h1>
         </Link>
-        <DownloadButton />
+        <div className="flex gap-2">
+          <Dropdown
+            defaultValue={bot}
+            sendSelected={(value) => {
+              navigate({
+                search: () => ({
+                  bot: value,
+                }),
+              });
+            }}
+            options={selectOptions}
+          />
+          <DownloadButton />
+        </div>
       </header>
       <Navigate />
       <div className="flex bg-slate-800 gap-3">
@@ -80,4 +106,11 @@ function Generate() {
 
 export const Route = createFileRoute("/generate")({
   component: Generate,
+  validateSearch: (search: Record<string, unknown>) => ({
+    bot:
+      typeof search.bot === "string" &&
+      Object.keys(botOptions).includes(search.bot as Bot)
+        ? search.bot
+        : "Tf2Autobot",
+  }),
 });
