@@ -1,7 +1,7 @@
 {
   "name": "options-generator",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.3.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
@@ -15,9 +15,13 @@
     "@reduxjs/toolkit": "^1.9.0",
     "@tanstack/react-router": "^1.105.0",
     "@vercel/analytics": "^1.2.0",
+    "github-markdown-css": "^5.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-markdown": "^10.1.0",
     "react-redux": "^8.0.5",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1",
     "tailwind-scrollbar": "^2.0.1"
   },
   "devDependencies": {

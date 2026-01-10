@@ -1,9 +1,11 @@
 import Parameters from "./Parameters";
 import useOptions from "../../store/useOptions";
+import Preview from "../Preview";
+import { getConfigDoc } from "../../utils/configDocs";
 
 const Description = () => {
   const { currentDescription, currentPath } = useOptions();
-
+  const md = getConfigDoc(currentPath);
   let content = (
     <p className="p-2 bg-slate-600 rounded-lg text-slate-100">
       Hover on a property to get a brief description
@@ -72,7 +74,9 @@ const Description = () => {
       </p>
     );
   }
-
+  if (md) {
+    content = <Preview markdownString={md} />;
+  }
   return (
     <>
       {currentPath && (
