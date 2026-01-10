@@ -18,10 +18,14 @@ const DownloadButton = () => {
   };
   return (
     <button
-      className="bg-slate-700 px-3 self-center py-1 rounded-md font-semibold text-slate-100 inline-flex hover:shadow-md hover:bg-slate-800 hover:text-lime-500 active:bg-slate-900 "
+      className="bg-slate-700 px-3 h-8 py-1 self-center rounded-md font-semibold text-slate-100
+             inline-flex items-center
+             hover:shadow-md hover:bg-slate-800 hover:text-lime-500
+             active:bg-slate-900"
       onClick={downloadFile}
     >
-      Download <ArrowDownTrayIcon className="w-5 h-5 self-center ml-2" />
+      <span className="hidden sm:inline">Download</span>
+      <ArrowDownTrayIcon className="w-5 h-5 sm:ml-2" />
     </button>
   );
 };

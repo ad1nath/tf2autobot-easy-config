@@ -21,7 +21,7 @@ export default function Dropdown({ options, defaultValue, onValueChange }) {
     >
       <Select.Trigger
         className="
-          group inline-flex h-9 min-w-36 items-center justify-between gap-2
+          group inline-flex h-8 min-w-36 items-center justify-between gap-2
           rounded-md bg-slate-700 px-3 text-sm text-slate-200
           border border-slate-900
           hover:bg-slate-800 active:bg-slate-900

@@ -47,10 +47,11 @@ function Generate() {
 
   return (
     <>
-      <header className="p-5  bg-slate-900 flex justify-between">
+      <header className="p-5 bg-slate-900 flex justify-between">
         <Link to="/">
           <h1 className=" text-slate-100 font-bold text-xl">
-            TF2Autobot EasyConfig
+            <span className="hidden sm:inline">TF2Autobot EasyConfig</span>
+            <span className="sm:hidden">EZConfig</span>
           </h1>
         </Link>
         <div className="flex gap-2">
