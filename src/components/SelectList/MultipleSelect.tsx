@@ -74,8 +74,8 @@ const MultipleSelect = ({ options, id, sendTags, defaultValue }) => {
       <div className="flex-1">
         <ul
           onClick={handleTagClick}
-          className="flex bg-gray-800 flex-wrap shadow-sm 
-          px-1 border border-gray-600 hover:border-white"
+          className="flex bg-linear-darker flex-wrap shadow-sm 
+          px-2 py-1 border border-linear-border hover:border-linear-accent transition-colors"
         >
           {tagList}
           <input
@@ -86,13 +86,12 @@ const MultipleSelect = ({ options, id, sendTags, defaultValue }) => {
             onBlur={handleBlur}
             onKeyUp={handleKeyPress}
             className="
-          bg-gray-800 text-white
+          bg-linear-darker text-linear-text
            hover:outline-none outline-none
-          pl-2 py-0.5
+          pl-2 py-1
           sm:text-sm
           w-50 flex-1
-          placeholder:italic
-          placeholder:text-gray-500
+          placeholder:text-linear-text-secondary
           
           "
             value={value}
@@ -102,7 +101,7 @@ const MultipleSelect = ({ options, id, sendTags, defaultValue }) => {
         {options && (
           <ul
             onMouseDown={handleAddClick}
-            className="max-h-40 border border-gray-700 w-max py-1 absolute group-focus-within:visible shadow-md invisible bg-gray-800 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent"
+            className="max-h-40 border border-linear-border w-max py-1 absolute group-focus-within:visible shadow-lg invisible bg-linear-darker overflow-y-auto"
           >
             {optionsList}
           </ul>

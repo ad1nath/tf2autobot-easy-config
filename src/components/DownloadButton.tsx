@@ -18,10 +18,10 @@ const DownloadButton = () => {
   };
   return (
     <button
-      className="bg-gray-800 px-3 h-8 py-1 self-center font-semibold text-white
-             inline-flex items-center
-             hover:shadow-md hover:bg-gray-700 hover:text-white
-             active:bg-gray-800"
+      className="bg-linear-darker px-3 h-8 py-1 self-center font-medium text-linear-text
+             inline-flex items-center border border-linear-border
+             hover:bg-linear-gray hover:border-linear-accent
+             active:bg-linear-darker transition-colors"
       onClick={downloadFile}
     >
       <span className="hidden sm:inline">Download</span>

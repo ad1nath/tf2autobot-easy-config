@@ -19,14 +19,14 @@ const CopyButton = ({ onClick, classes }) => {
     >
       <span
         data-copy={copy}
-        className="group-hover:scale-100 inline transition-transform duration-300 origin-left left-full  mr-2  -translate-y-1/4 scale-0 bg-gray-700 px-1 text-sm text-white absolute 
+        className="group-hover:scale-100 inline transition-transform duration-300 origin-left left-full  mr-2  -translate-y-1/4 scale-0 bg-linear-darker border border-linear-border px-2 py-1 text-sm text-linear-text absolute
     before:content-[attr(data-copy)]
     "
       />
       {copy === "Copy Command" ? (
-        <ClipboardDocumentIcon className="h-5 w-5 self-center text-white active:text-white" />
+        <ClipboardDocumentIcon className="h-5 w-5 self-center text-linear-text-secondary hover:text-linear-text transition-colors" />
       ) : (
-        <ClipboardDocumentCheckIcon className="h-5 w-5 self-center text-white" />
+        <ClipboardDocumentCheckIcon className="h-5 w-5 self-center text-linear-accent" />
       )}
     </button>
   );

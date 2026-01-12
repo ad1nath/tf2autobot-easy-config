@@ -4,7 +4,7 @@ const TagList = ({ tag }) => {
   return (
     <li
       id={tag}
-      className="bg-gray-700 hover:text-white text-white sm:text-sm px-1 m-0.5 text-center hover:cursor-pointer self-center border border-gray-600"
+      className="bg-linear-gray hover:bg-linear-accent text-linear-text sm:text-sm px-2 py-1 m-1 text-center hover:cursor-pointer self-center border border-linear-border hover:border-linear-accent transition-colors"
     >
       {tag}
     </li>

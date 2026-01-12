@@ -9,33 +9,37 @@ import Footer from "../components/Footer";
 
 function Index() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <nav className="p-5 flex justify-between">
-        <h1 className="text-white text-xl font-bold">TF2Autobot EasyConfig</h1>
+    <div className="min-h-screen bg-linear-dark text-linear-text">
+      <nav className="px-6 py-4 border-b border-linear-border bg-linear-darker">
+        <h1 className="text-linear-text font-semibold text-lg">
+          TF2Autobot EasyConfig
+        </h1>
       </nav>
       {/* Hero Section */}
-      <header className="container mx-auto px-4 py-16">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-5xl font-bold mb-6">
+      <header className="container mx-auto px-6 py-20">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl font-semibold mb-6 text-linear-text">
             Configure Your TF2Autobot
-            <span className="text-lime-500"> Effortlessly</span>
+            <span className="text-linear-accent"> Effortlessly</span>
           </h1>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-linear-text-secondary mb-8 leading-relaxed">
             A user-friendly tool to generate and customize your TF2Autobot
             configuration files with just a few clicks.
           </p>
           <Link
             to="/generate"
-            className="bg-white hover:bg-gray-200 text-black px-8 py-3 font-semibold flex items-center gap-2 mx-auto transition-colors"
+            className="bg-linear-accent hover:bg-linear-accent-hover text-linear-dark px-8 py-3 font-medium transition-colors inline-flex items-center gap-2"
           >
             Get Started
             <ArrowRightIcon className="w-5 h-5" />
           </Link>
         </div>
       </header>
-      <section className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+      <section className="container mx-auto px-6 py-20">
+        <h2 className="text-3xl font-semibold text-center mb-12 text-linear-text">
+          How It Works
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <FeatureCard
             number="1"
             title="Configure"
@@ -69,12 +73,12 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <div className="bg-gray-900 p-6 text-center border border-gray-700">
-      <div className="flex-shrink-0 w-8 h-8 bg-white text-black flex items-center justify-center font-bold mb-4">
+    <div className="bg-linear-gray p-6 border border-linear-border">
+      <div className="flex items-center justify-center w-10 h-10 bg-linear-accent text-linear-dark font-medium mb-4">
         {number}
       </div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-gray-300">{description}</p>
+      <h3 className="text-xl font-medium mb-2 text-linear-text">{title}</h3>
+      <p className="text-linear-text-secondary">{description}</p>
     </div>
   );
 }

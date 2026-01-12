@@ -49,14 +49,14 @@ function Generate() {
 
   return (
     <>
-      <header className="p-5 bg-black flex justify-between">
+      <header className="bg-linear-darker border-b border-linear-border px-6 py-4 flex justify-between items-center">
         <Link to="/">
-          <h1 className="text-white font-bold text-xl">
+          <h1 className="text-linear-text font-semibold text-lg">
             <span className="hidden sm:inline">TF2Autobot EasyConfig</span>
             <span className="sm:hidden">EZConfig</span>
           </h1>
         </Link>
-        <div className="flex gap-2">
+        <div className="flex gap-3">
           <Dropdown
             defaultValue={bot}
             onValueChange={(value) => {
@@ -72,22 +72,28 @@ function Generate() {
         </div>
       </header>
       <Navigate />
-      <div className="flex bg-black">
-        <aside className="sticky hidden md:block top-0 h-screen overflow-hidden">
-          <KeyList />
+      <div className="flex bg-linear-dark min-h-screen">
+        <aside className="w-64 bg-linear-darker border-r border-linear-border hidden md:block">
+          <div className="sticky top-0 h-screen overflow-y-auto">
+            <div className="p-4">
+              <KeyList />
+            </div>
+          </div>
         </aside>
-        <main className="flex-1 p-4">
+        <main className="flex-1 px-8 py-6 max-w-4xl">
           {error ? (
             <>
               <h2 className="text-xl font-medium text-red-400 mb-4">ERROR</h2>
-              <p className="text-slate-200">{error.message}</p>
+              <p className="text-linear-text-secondary">{error.message}</p>
             </>
           ) : (
             <Items />
           )}
         </main>
-        <aside className="sticky top-0 md:block hidden w-2/5 h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent p-4">
-          <Description />
+        <aside className="w-80 bg-linear-darker border-l border-linear-border hidden lg:block">
+          <div className="sticky top-0 h-screen overflow-y-auto p-6">
+            <Description />
+          </div>
         </aside>
         <SideBar />
       </div>

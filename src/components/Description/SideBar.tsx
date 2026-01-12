@@ -55,7 +55,7 @@ export default function SideBar() {
                     <div className="absolute top-0 left-0 -ml-8 flex pt-4 pr-2 sm:-ml-10 sm:pr-4">
                       <button
                         type="button"
-                        className="text-white hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white"
+                        className="text-linear-text hover:text-linear-text-secondary focus:outline-none focus:ring-2 focus:ring-linear-accent"
                         onClick={() => {
                           dispatch(optionActions.toggleDescriptionBox());
                         }}
@@ -65,7 +65,7 @@ export default function SideBar() {
                       </button>
                     </div>
                   </Transition.Child>
-                  <div className="flex h-full flex-col overflow-y-scroll bg-black py-6 shadow-xl">
+                  <div className="flex h-full flex-col overflow-y-scroll bg-linear-darker border-l border-linear-border py-6 shadow-xl">
                     <div className="relative mt-6 flex-1 px-4 sm:px-6">
                       <Description />
                     </div>

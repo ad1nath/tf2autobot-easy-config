@@ -65,66 +65,62 @@ const Input = ({ type, label, value, id, isChecked, description }) => {
     );
   };
 
-  return (
-    <li
-      className="p-1 flex my-1 flex-wrap align-middle group/option"
-      onMouseEnter={handleEnter}
+  <li
+    className="p-3 flex flex-wrap items-center group/option hover:bg-linear-gray/50 transition-colors"
+    onMouseEnter={handleEnter}
+  >
+    <label
+      htmlFor={id}
+      className={`text-linear-text flex-1/2 hover:cursor-pointer self-center ${
+        type === "checkbox" ? "order-2 ml-3" : "md:mr-3"
+      }`}
     >
-      <label
-        htmlFor={id}
-        className={`text-slate-200 flex-1/2  hover:cursor-pointer self-center  ${
-          type === "checkbox" ? "order-2 ml-2" : "md:mr-2"
-        }  `}
-      >
-        {label}
-      </label>
-      <DescriptionButton
-        externalClasses={`${type === "checkbox" && "order-3"} md:hidden`}
+      {label}
+    </label>
+    <DescriptionButton
+      externalClasses={`${type === "checkbox" && "order-3"} md:hidden`}
+    />
+    <CopyButton
+      onClick={copyData}
+      classes={`mr-2 ${type === "checkbox" && "order-3 ml-3"}`}
+    />
+    {type === "list" && (
+      <MultipleSelect
+        label={label}
+        id={id}
+        sendTags={handleTags}
+        defaultValue={currentValue || value}
+        options={description ? description.options : null}
       />
-      <CopyButton
-        onClick={copyData}
-        classes={`mr-1 ${type === "checkbox" && "order-3 ml-3"}`}
-      />
-      {type === "list" && (
-        <MultipleSelect
-          label={label}
-          id={id}
-          sendTags={handleTags}
-          defaultValue={currentValue || value}
-          options={description ? description.options : null}
-        />
-      )}
+    )}
 
-      {type !== "list" && !keyValue && (
-        <input
-          onChange={handleChange}
-          className={`
-          bg-gray-800 text-white
-          mx-1
-          border-gray-600 border hover:outline-none outline-none
-          hover:border-white 
-          pl-2 py-0.5
-          placeholder:italic
-          placeholder:text-gray-500
-          accent-white
+    {type !== "list" && !keyValue && (
+      <input
+        onChange={handleChange}
+        className={`
+          bg-linear-darker text-linear-text
+          border border-linear-border hover:border-linear-accent
+          px-3 py-2
+          placeholder:text-linear-text-secondary
+          focus:outline-none focus:border-linear-accent
+          transition-colors
           ${type === "text" ? "flex-1 order-4 md:order-none" : ""}
           `}
-          type={type}
-          defaultChecked={currentValue === undefined ? isChecked : currentValue}
-          id={id}
-          defaultValue={currentValue || value}
-        />
-      )}
-      {keyValue && (
-        <Dropdown
-          options={keyValue}
-          id={id}
-          defaultValue={currentValue || value}
-          onValueChange={handleSelect}
-        />
-      )}
-    </li>
-  );
+        type={type}
+        defaultChecked={currentValue === undefined ? isChecked : currentValue}
+        id={id}
+        defaultValue={currentValue || value}
+      />
+    )}
+    {keyValue && (
+      <Dropdown
+        options={keyValue}
+        id={id}
+        defaultValue={currentValue || value}
+        onValueChange={handleSelect}
+      />
+    )}
+  </li>;
 };
 
 export default Input;

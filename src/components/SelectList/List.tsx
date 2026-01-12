@@ -2,7 +2,7 @@ const List = ({ option }) => {
   return (
     <li
       id={option}
-      className="text-white p-1 px-2 hover:bg-gray-700 hover:cursor-pointer hover:text-white text-sm"
+      className="text-linear-text p-2 px-3 hover:bg-linear-gray hover:cursor-pointer text-sm transition-colors"
     >
       {option}
     </li>

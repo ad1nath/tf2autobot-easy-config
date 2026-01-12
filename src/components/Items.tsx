@@ -8,7 +8,7 @@ const Items = ({ items, title, item_id }) => {
 
   if (options.length < 1 || descriptions.length < 1) {
     return (
-      <h2 className="text-lime-500 text-lg p-2 text-center">Loading...</h2>
+      <h2 className="text-linear-accent text-lg p-4 text-center">Loading...</h2>
     );
   }
   items = items || options[active];
@@ -44,18 +44,16 @@ const Items = ({ items, title, item_id }) => {
   return (
     <>
       {!title && (
-        <h2 className="text-xl font-medium p-5 bg-gray-800 text-white hidden md:block border-b border-gray-600">
+        <h2 className="text-xl font-medium px-6 py-4 bg-linear-gray text-linear-text border-b border-linear-border hidden md:block">
           {toLabel(active)}
         </h2>
       )}
       {title && (
-        <h2 className="my-1.5 mt-2 p-1 pl-2 font-[500] bg-gray-800 shadow-black shadow-sm text-white border-b border-gray-600">
+        <h2 className="my-2 p-3 font-medium bg-linear-gray text-linear-text border-b border-linear-border">
           {toLabel(title)}
         </h2>
       )}
-      <ul className="pl-4 md:pl-6 shadow-black shadow-md pb-2 border border-gray-700">
-        {itemList}
-      </ul>
+      <ul className="px-6 py-4 space-y-2">{itemList}</ul>
     </>
   );
 };
