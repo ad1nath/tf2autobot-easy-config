@@ -72,23 +72,21 @@ function Generate() {
         </div>
       </header>
       <Navigate />
-      <div className="flex bg-black gap-3">
-        <aside className="sticky hidden md:block top-0 my-3 bg-gray-900/50 backdrop-blur-sm border-r border-gray-700/50">
+      <div className="flex bg-black">
+        <aside className="sticky hidden md:block top-0 h-screen overflow-hidden">
           <KeyList />
         </aside>
-        <main className="p-6 md:w-2/5 w-full my-3 min-h-screen">
+        <main className="flex-1 p-4">
           {error ? (
             <>
-              <h2 className="text-xl font-medium p-5 text-red-400 hidden md:block">
-                ERROR
-              </h2>
-              <p className="text-slate-200 p-2">{error.message}</p>
+              <h2 className="text-xl font-medium text-red-400 mb-4">ERROR</h2>
+              <p className="text-slate-200">{error.message}</p>
             </>
           ) : (
             <Items />
           )}
         </main>
-        <aside className="h-screen sticky top-0 md:block hidden w-2/5 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent my-3">
+        <aside className="sticky top-0 md:block hidden w-2/5 h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent p-4">
           <Description />
         </aside>
         <SideBar />
