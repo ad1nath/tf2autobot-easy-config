@@ -55,7 +55,7 @@ const Items = ({ items, title, item_id }) => {
           {toLabel(title)}
         </h2>
       )}
-      <ul className="px-6 py-4 space-y-2">{itemList}</ul>
+      <ul className="px-6 py-2 space-y-1">{itemList}</ul>
     </>
   );
 };

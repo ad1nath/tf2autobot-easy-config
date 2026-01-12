@@ -67,13 +67,13 @@ const Input = ({ type, label, value, id, isChecked, description }) => {
 
   return (
     <li
-      className="p-3 flex flex-wrap items-center group/option hover:bg-linear-gray/50 transition-colors"
+      className="py-2 px-3 flex flex-wrap items-center group/option hover:bg-linear-gray/50 transition-colors"
       onMouseEnter={handleEnter}
     >
       <label
         htmlFor={id}
         className={`text-linear-text hover:cursor-pointer flex-1 min-w-0 ${
-          type === "checkbox" ? "order-2 ml-3" : "md:mr-3"
+          type === "checkbox" ? "order-2 ml-2" : "mr-2"
         }`}
       >
         {label}
