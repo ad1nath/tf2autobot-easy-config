@@ -65,39 +65,40 @@ const Input = ({ type, label, value, id, isChecked, description }) => {
     );
   };
 
-  <li
-    className="p-3 flex flex-wrap items-center group/option hover:bg-linear-gray/50 transition-colors"
-    onMouseEnter={handleEnter}
-  >
-    <label
-      htmlFor={id}
-      className={`text-linear-text flex-1/2 hover:cursor-pointer self-center ${
-        type === "checkbox" ? "order-2 ml-3" : "md:mr-3"
-      }`}
+  return (
+    <li
+      className="p-3 flex flex-wrap items-center group/option hover:bg-linear-gray/50 transition-colors"
+      onMouseEnter={handleEnter}
     >
-      {label}
-    </label>
-    <DescriptionButton
-      externalClasses={`${type === "checkbox" && "order-3"} md:hidden`}
-    />
-    <CopyButton
-      onClick={copyData}
-      classes={`mr-2 ${type === "checkbox" && "order-3 ml-3"}`}
-    />
-    {type === "list" && (
-      <MultipleSelect
-        label={label}
-        id={id}
-        sendTags={handleTags}
-        defaultValue={currentValue || value}
-        options={description ? description.options : null}
+      <label
+        htmlFor={id}
+        className={`text-linear-text hover:cursor-pointer flex-1 min-w-0 ${
+          type === "checkbox" ? "order-2 ml-3" : "md:mr-3"
+        }`}
+      >
+        {label}
+      </label>
+      <DescriptionButton
+        externalClasses={`${type === "checkbox" && "order-3"} md:hidden`}
       />
-    )}
+      <CopyButton
+        onClick={copyData}
+        classes={`mr-2 ${type === "checkbox" && "order-3 ml-3"}`}
+      />
+      {type === "list" && (
+        <MultipleSelect
+          label={label}
+          id={id}
+          sendTags={handleTags}
+          defaultValue={currentValue || value}
+          options={description ? description.options : null}
+        />
+      )}
 
-    {type !== "list" && !keyValue && (
-      <input
-        onChange={handleChange}
-        className={`
+      {type !== "list" && !keyValue && (
+        <input
+          onChange={handleChange}
+          className={`
           bg-linear-darker text-linear-text
           border border-linear-border hover:border-linear-accent
           px-3 py-2
@@ -106,21 +107,22 @@ const Input = ({ type, label, value, id, isChecked, description }) => {
           transition-colors
           ${type === "text" ? "flex-1 order-4 md:order-none" : ""}
           `}
-        type={type}
-        defaultChecked={currentValue === undefined ? isChecked : currentValue}
-        id={id}
-        defaultValue={currentValue || value}
-      />
-    )}
-    {keyValue && (
-      <Dropdown
-        options={keyValue}
-        id={id}
-        defaultValue={currentValue || value}
-        onValueChange={handleSelect}
-      />
-    )}
-  </li>;
+          type={type}
+          defaultChecked={currentValue === undefined ? isChecked : currentValue}
+          id={id}
+          defaultValue={currentValue || value}
+        />
+      )}
+      {keyValue && (
+        <Dropdown
+          options={keyValue}
+          id={id}
+          defaultValue={currentValue || value}
+          onValueChange={handleSelect}
+        />
+      )}
+    </li>
+  );
 };
 
 export default Input;

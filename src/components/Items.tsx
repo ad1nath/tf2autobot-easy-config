@@ -16,15 +16,17 @@ const Items = ({ items, title, item_id }) => {
     const itemType = typeof items[item];
     const id = `${item_id || active}_${item}`;
     let type;
-    itemType === "string"
-      ? (type = "text")
-      : itemType === "boolean"
-        ? (type = "checkbox")
-        : itemType === "number"
-          ? (type = "number")
-          : Array.isArray(items[item])
-            ? (type = "list")
-            : type === "null";
+    if (itemType === "string") {
+      type = "text";
+    } else if (itemType === "boolean") {
+      type = "checkbox";
+    } else if (itemType === "number") {
+      type = "number";
+    } else if (Array.isArray(items[item])) {
+      type = "list";
+    } else if (items[item] === null) {
+      type = "text"; // or some default type for null values
+    }
     if (!type) {
       return <Items items={items[item]} title={item} item_id={id} key={id} />;
     } else {
