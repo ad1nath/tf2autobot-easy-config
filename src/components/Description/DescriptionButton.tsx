@@ -16,7 +16,7 @@ const DescriptionButton = ({
       }}
       aria-label="show description"
     >
-      <QuestionMarkCircleIcon className="h-5 w-5 text-white" />
+      <QuestionMarkCircleIcon className="h-5 w-5 text-linear-text-secondary hover:text-linear-text transition-colors" />
     </button>
   );
 };

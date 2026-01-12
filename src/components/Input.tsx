@@ -7,6 +7,8 @@ import DescriptionButton from "./Description/DescriptionButton";
 import CopyButton from "./CopyButton";
 import useOptions from "../store/useOptions";
 import { optionActions } from "../store/options-ctx";
+import { NumberField } from "@base-ui/react/number-field";
+import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
 
 const Input = ({ type, label, value, id, isChecked, description }) => {
   const [copiedData, setCopiedData] = useState("");
@@ -41,6 +43,16 @@ const Input = ({ type, label, value, id, isChecked, description }) => {
     );
   };
 
+  const handleNumberChange = (value) => {
+    setCopiedData(`!config ${id.replaceAll("_", ".")}=${value}`);
+    dispatch(
+      optionActions.editOption({
+        optionValue: value,
+        optionKeys: id,
+      })
+    );
+  };
+
   const handleEnter = () => {
     dispatch(optionActions.setCurrentDescription({ id, description }));
   };
@@ -67,14 +79,14 @@ const Input = ({ type, label, value, id, isChecked, description }) => {
 
   return (
     <li
-      className="p-1 flex my-1 flex-wrap align-middle group/option"
+      className="py-2 px-3 flex flex-wrap items-center group/option hover:bg-linear-gray/50 transition-colors"
       onMouseEnter={handleEnter}
     >
       <label
         htmlFor={id}
-        className={`text-slate-200 flex-1/2  hover:cursor-pointer self-center  ${
-          type === "checkbox" ? "order-2 ml-2" : "md:mr-2"
-        }  `}
+        className={`text-linear-text hover:cursor-pointer flex-1 min-w-0 ${
+          type === "checkbox" ? "order-2 ml-2" : "mr-2"
+        }`}
       >
         {label}
       </label>
@@ -83,7 +95,7 @@ const Input = ({ type, label, value, id, isChecked, description }) => {
       />
       <CopyButton
         onClick={copyData}
-        classes={`mr-1 ${type === "checkbox" && "order-3 ml-3"}`}
+        classes={`mr-2 ${type === "checkbox" && "order-3 ml-3"}`}
       />
       {type === "list" && (
         <MultipleSelect
@@ -96,24 +108,59 @@ const Input = ({ type, label, value, id, isChecked, description }) => {
       )}
 
       {type !== "list" && !keyValue && (
-        <input
-          onChange={handleChange}
-          className={`
-          bg-slate-900 text-slate-200
-          mx-1
-          rounded-md border-slate-500 border hover:outline-none outline-none
-          hover:border-lime-300 
-          pl-2 py-0.5
-          placeholder:italic
-          placeholder:text-slate-600
-          accent-lime-500
-          ${type === "text" ? "flex-1 order-4 md:order-none" : ""}
-          `}
-          type={type}
-          defaultChecked={currentValue === undefined ? isChecked : currentValue}
-          id={id}
-          defaultValue={currentValue || value}
-        />
+        <>
+          {type === "number" ? (
+            <NumberField.Root
+              value={currentValue || value}
+              onValueChange={handleNumberChange}
+              className="flex-1 order-4 md:order-none"
+            >
+              <NumberField.Group
+                className="
+                  flex items-center
+                  bg-linear-darker text-linear-text
+                  border border-linear-border hover:border-linear-accent
+                  px-3 py-2
+                  placeholder:text-linear-text-secondary
+                  focus-within:outline-none focus-within:border-linear-accent
+                  transition-colors
+                "
+              >
+                <NumberField.Decrement className="flex items-center justify-center w-6 h-6 text-linear-text-secondary hover:text-linear-text hover:bg-linear-gray rounded transition-colors">
+                  <ChevronDownIcon className="h-4 w-4" />
+                </NumberField.Decrement>
+                <NumberField.Input
+                  className="
+                    flex-1 bg-transparent text-center
+                    focus:outline-none
+                  "
+                />
+                <NumberField.Increment className="flex items-center justify-center w-6 h-6 text-linear-text-secondary hover:text-linear-text hover:bg-linear-gray rounded transition-colors">
+                  <ChevronUpIcon className="h-4 w-4" />
+                </NumberField.Increment>
+              </NumberField.Group>
+            </NumberField.Root>
+          ) : (
+            <input
+              onChange={handleChange}
+              className={`
+                bg-linear-darker text-linear-text
+                border border-linear-border hover:border-linear-accent
+                px-3 py-2
+                placeholder:text-linear-text-secondary
+                focus:outline-none focus:border-linear-accent
+                transition-colors
+                ${type === "text" ? "flex-1 order-4 md:order-none" : ""}
+              `}
+              type={type}
+              defaultChecked={
+                currentValue === undefined ? isChecked : currentValue
+              }
+              id={id}
+              defaultValue={currentValue || value}
+            />
+          )}
+        </>
       )}
       {keyValue && (
         <Dropdown

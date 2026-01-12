@@ -1,3 +1,76 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    html {
+        @apply bg-linear-dark text-linear-text;
+    }
+
+    body {
+        @apply bg-linear-dark text-linear-text font-sans;
+    }
+
+    /* Custom scrollbar for webkit browsers */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-linear-gray;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-linear-border rounded-none;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-linear-text-secondary;
+    }
+}
+
+@layer components {
+    .sidebar-link {
+        @apply px-3 py-2 text-sm text-linear-text-secondary hover:text-linear-text hover:bg-linear-gray transition-colors duration-200 border-l-2 border-transparent;
+    }
+
+    .sidebar-link.active {
+        @apply text-linear-text bg-linear-gray border-l-linear-accent;
+    }
+
+    .content-section {
+        @apply prose prose-invert max-w-none;
+    }
+
+    .content-section h1 {
+        @apply text-2xl font-semibold text-linear-text mb-4 mt-8;
+    }
+
+    .content-section h2 {
+        @apply text-xl font-semibold text-linear-text mb-3 mt-6;
+    }
+
+    .content-section h3 {
+        @apply text-lg font-medium text-linear-text mb-2 mt-4;
+    }
+
+    .content-section p {
+        @apply text-linear-text-secondary leading-relaxed mb-4;
+    }
+
+    .content-section code {
+        @apply bg-linear-gray px-1.5 py-0.5 text-sm font-mono text-linear-text;
+    }
+
+    .content-section pre {
+        @apply bg-linear-darker border border-linear-border p-4 overflow-x-auto;
+    }
+
+    .content-section pre code {
+        @apply bg-transparent p-0;
+    }
+
+    .content-section blockquote {
+        @apply border-l-4 border-linear-accent pl-4 italic text-linear-text-secondary;
+    }
+}
