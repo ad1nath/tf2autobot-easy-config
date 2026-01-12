@@ -22,11 +22,12 @@ export default function Dropdown({ options, defaultValue, onValueChange }) {
       <Select.Trigger
         className="
           group inline-flex h-8 min-w-36 items-center justify-between gap-2
-          rounded-md bg-slate-700 px-3 text-sm text-slate-200
-          border border-slate-900
-          hover:bg-slate-800 active:bg-slate-900
-          focus-visible:outline focus-visible:outline-2 focus-visible:outline-lime-500
-          data-[popup-open]:bg-slate-900
+          bg-linear-darker px-3 text-sm text-linear-text
+          border border-linear-border
+          hover:bg-linear-gray hover:border-linear-accent
+          focus-visible:outline focus-visible:outline-2 focus-visible:outline-linear-accent
+          data-[popup-open]:bg-linear-gray
+          transition-colors
         "
       >
         <Select.Value />
@@ -34,7 +35,7 @@ export default function Dropdown({ options, defaultValue, onValueChange }) {
           className="
             transition-transform duration-300
             group-data-[popup-open]:rotate-180
-            text-slate-300 group-hover:text-lime-500
+            text-linear-text-secondary group-hover:text-linear-text
           "
         >
           <ChevronDownIcon className="h-5 w-5" />
@@ -45,8 +46,8 @@ export default function Dropdown({ options, defaultValue, onValueChange }) {
           <Select.Popup
             className="
               min-w-[var(--anchor-width)]
-              rounded-lg border border-slate-900
-              bg-slate-700 shadow-lg
+              border border-linear-border
+              bg-linear-darker shadow-lg
               overflow-hidden
               outline-none
               data-[starting-style]:opacity-0 data-[ending-style]:opacity-0
@@ -66,18 +67,13 @@ export default function Dropdown({ options, defaultValue, onValueChange }) {
                   text-sm leading-4
                   select-none outline-none
                   cursor-pointer
-                text-slate-200
+                text-linear-text
                   /* highlighted state */
                   data-[highlighted]:relative
                   data-[highlighted]:z-0
-                  data-[highlighted]:text-lime-400
-                  data-[highlighted]:before:absolute
-                  data-[highlighted]:before:inset-x-1
-                  data-[highlighted]:before:inset-y-0
-                  data-[highlighted]:before:-z-10
-                  data-[highlighted]:before:rounded-sm
-                  data-[highlighted]:before:bg-gray-900
-                  data-[selected]:text-lime-400
+                  data-[highlighted]:text-linear-text
+                  data-[highlighted]:bg-linear-gray
+                  data-[selected]:text-linear-accent
                   /* group variants */
                   group-data-[side=none]:pr-12
                   group-data-[side=none]:text-base

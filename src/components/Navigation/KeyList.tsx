@@ -17,9 +17,14 @@ const KeyList = () => {
     <Key key={option} name={option} />
   ));
   return (
-    <ul onClick={makeActive} className="p-1">
-      {keyList}
-    </ul>
+    <div className="space-y-1">
+      <h3 className="px-3 py-2 text-xs font-semibold text-linear-text-secondary uppercase tracking-wider">
+        Configuration Keys
+      </h3>
+      <ul onClick={makeActive} className="space-y-1">
+        {keyList}
+      </ul>
+    </div>
   );
 };
 

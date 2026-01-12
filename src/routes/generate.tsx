@@ -49,14 +49,14 @@ function Generate() {
 
   return (
     <>
-      <header className="p-5 bg-slate-900 flex justify-between">
+      <header className="bg-linear-darker border-b border-linear-border px-6 py-4 flex justify-between items-center">
         <Link to="/">
-          <h1 className=" text-slate-100 font-bold text-xl">
+          <h1 className="text-linear-text font-semibold text-lg">
             <span className="hidden sm:inline">TF2Autobot EasyConfig</span>
             <span className="sm:hidden">EZConfig</span>
           </h1>
         </Link>
-        <div className="flex gap-2">
+        <div className="flex gap-3">
           <Dropdown
             defaultValue={bot}
             onValueChange={(value) => {
@@ -72,33 +72,28 @@ function Generate() {
         </div>
       </header>
       <Navigate />
-      <div className="flex bg-slate-800 gap-3">
-        <aside
-          className="h-screen sticky  shadow-xl shadow-black hidden md:block top-0 my-3 bg-slate-800 p-5 overflow-y-auto w-1/5 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent scrollbar-thumb-rounded-xl 
-        rounded-lg"
-        >
-          <KeyList />
+      <div className="flex bg-linear-dark min-h-screen">
+        <aside className="w-64 bg-linear-darker border-r border-linear-border hidden md:block flex-shrink-0">
+          <div className="sticky top-0 h-screen overflow-y-auto">
+            <div className="p-4">
+              <KeyList />
+            </div>
+          </div>
         </aside>
-        <main
-          className="  shadow-black shadow-2xl
-        md:p-10 p-2 md:w-2/5 w-full bg-slate-800 rounded-lg my-3 min-h-screen"
-        >
+        <main className="flex-1 px-8 py-6 min-w-0">
           {error ? (
             <>
-              <h2 className="text-xl font-medium p-5 rounded-lg bg-slate-900 text-lime-500 hidden md:block ">
-                ERROR
-              </h2>
-              <p className="text-slate-200 p-2">{error.message}</p>
+              <h2 className="text-xl font-medium text-red-400 mb-4">ERROR</h2>
+              <p className="text-linear-text-secondary">{error.message}</p>
             </>
           ) : (
             <Items />
           )}
         </main>
-        <aside
-          className="h-screen sticky top-0 p-5 shadow-black shadow-xl  md:block hidden w-2/5 bg-slate-800  overflow-y-auto scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-slate-500 
-        rounded-lg my-3"
-        >
-          <Description />
+        <aside className="w-96 bg-linear-darker border-l border-linear-border hidden lg:block flex-shrink-0">
+          <div className="sticky top-0 h-screen overflow-y-auto p-6">
+            <Description />
+          </div>
         </aside>
         <SideBar />
       </div>

@@ -45,20 +45,20 @@ const Navigate = () => {
     });
   };
   return (
-    <nav className="bg-slate-900 flex  justify-center text-white font-semibold py-2 align-center sticky top-0 md:hidden">
+    <nav className="bg-linear-darker border-b border-linear-border flex justify-center text-linear-text font-medium py-3 align-center sticky top-0 md:hidden">
       <button
-        className="p-2 hover:bg-slate-800 w-1/3 m-2 rounded-xl text-sm select:none"
+        className="px-3 py-2 hover:bg-linear-gray transition-colors text-sm border border-linear-border"
         onClick={handleLast}
       >
         {lastItem || "Jump to end"}
       </button>
-      <ChevronLeftIcon className="h-5 w-5 self-center" />
-      <div className="group  relative">
+      <ChevronLeftIcon className="h-5 w-5 self-center text-linear-text-secondary" />
+      <div className="group relative">
         <button
           onClick={() => {
             setShow((pre) => !pre);
           }}
-          className={`p-2 m-2 rounded-xl group text-sm text-center text-lime-500`}
+          className="px-3 py-2 text-sm text-linear-text border border-linear-border hover:bg-linear-gray transition-colors"
         >
           {currentItem}
         </button>
@@ -66,14 +66,14 @@ const Navigate = () => {
           onClick={handleMiddle}
           className={`absolute ${
             show ? "visible" : "invisible"
-          }  p-2 bg-slate-700 h-52 overflow-y-auto border-lime-500 drop-shadow-md 
-        translate-x-1/2 z-10 right-1/2 scrollbar-thin scrollbar-thumb-slate-500 scrollbar-thumb-rounded-md scrollbar-track-transparent
-        rounded-lg`}
+          } bg-linear-darker border border-linear-border py-2 max-h-52 overflow-y-auto translate-x-1/2 z-10 right-1/2 shadow-lg`}
         >
           {keyList.map((item, index) => (
             <li
-              className={`text-slate-lime p-1 hover:cursor-pointer hover:text-lime-500 ${
-                index === current ? "text-lime-600" : ""
+              className={`px-3 py-2 hover:bg-linear-gray cursor-pointer text-sm transition-colors ${
+                index === current
+                  ? "text-linear-accent bg-linear-gray"
+                  : "text-linear-text-secondary hover:text-linear-text"
               } `}
               key={item}
               id={index}
@@ -83,9 +83,9 @@ const Navigate = () => {
           ))}
         </ul>
       </div>
-      <ChevronRightIcon className="h-5 w-5 self-center" />
+      <ChevronRightIcon className="h-5 w-5 self-center text-linear-text-secondary" />
       <button
-        className="p-2 hover:bg-slate-800 w-1/3 m-2 text-sm rounded-xl "
+        className="px-3 py-2 hover:bg-linear-gray transition-colors text-sm border border-linear-border"
         onClick={handleNext}
       >
         {nextItem || "Jump to start"}

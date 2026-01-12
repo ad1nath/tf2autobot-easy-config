@@ -7,31 +7,33 @@ const Description = () => {
   const { currentDescription, currentPath } = useOptions();
   const md = getConfigDoc(currentPath);
   let content = (
-    <p className="p-2 bg-slate-600 rounded-lg text-slate-100">
+    <p className="p-4 bg-linear-gray text-linear-text-secondary border border-linear-border">
       Hover on a property to get a brief description
     </p>
   );
   if (currentDescription) {
     content = (
-      <div className="text-slate-200">
-        <p className="font-bold py-2 my-1">
-          Type{" "}
-          <span className="font-mono bg-slate-700 p-1 text-xs px-2 rounded-md">
+      <div className="text-linear-text space-y-4">
+        <div>
+          <span className="font-medium text-linear-text-secondary">Type: </span>
+          <code className="bg-linear-gray px-2 py-1 text-sm font-mono border border-linear-border">
             {currentDescription.type}
+          </code>
+        </div>
+        <div>
+          <span className="font-medium text-linear-text-secondary">
+            Default:{" "}
           </span>
-        </p>
-        <p className="font-bold py-2 my-1">
-          Default{" "}
-          <span className="font-mono bg-slate-700 text-sm p-1 px-2 rounded-md inline-block">
+          <code className="bg-linear-gray px-2 py-1 text-sm font-mono border border-linear-border">
             {currentDescription.default.length === 0
               ? "empty"
               : currentDescription.default}
-          </span>
-        </p>
+          </code>
+        </div>
 
-        <div className="mb-2">
-          <h3 className="font-bold text-slate-100 ">Details</h3>
-          <p className=" text-slate-200 bg-slate-700 shadow-inner p-2 leading-7 lg:text-md rounded-md">
+        <div>
+          <h3 className="font-semibold text-linear-text mb-2">Details</h3>
+          <p className="text-linear-text-secondary leading-relaxed bg-linear-gray p-3 border border-linear-border">
             {currentDescription.details.length === 0
               ? "No description available."
               : currentDescription.details}
@@ -39,8 +41,8 @@ const Description = () => {
         </div>
         {currentDescription.note && (
           <div>
-            <h3 className="font-bold text-slate-100 my-1">Note</h3>
-            <p className=" text-slate-200  bg-slate-700 shadow-inner leading-7  p-2 rounded-md">
+            <h3 className="font-semibold text-linear-text mb-2">Note</h3>
+            <p className="text-linear-text-secondary leading-relaxed bg-linear-gray p-3 border border-linear-border">
               {currentDescription.note}
             </p>
           </div>
@@ -49,18 +51,20 @@ const Description = () => {
           <Parameters parameters={currentDescription.parameters} />
         )}
         {currentDescription.example && (
-          <div className="mb-2">
-            <h3 className="font-bold text-slate-100">Example</h3>
+          <div>
+            <h3 className="font-semibold text-linear-text mb-2">Example</h3>
             {currentDescription.example.startsWith("http") ? (
               <img
                 src={currentDescription.example}
                 alt="example"
-                className="rounded-md shadow-inner"
+                className="border border-linear-border"
               />
             ) : (
-              <p className=" text-slate-200  bg-slate-700 shadow-inner leading-5 p-2 rounded-md">
-                {currentDescription.example}
-              </p>
+              <pre className="bg-linear-darker p-3 border border-linear-border overflow-x-auto">
+                <code className="text-sm font-mono text-linear-text">
+                  {currentDescription.example}
+                </code>
+              </pre>
             )}
           </div>
         )}
@@ -69,7 +73,7 @@ const Description = () => {
   }
   if (currentDescription === null) {
     content = (
-      <p className="p-2 bg-slate-600 mt-5 rounded-lg text-slate-100">
+      <p className="p-4 bg-linear-gray text-linear-text-secondary border border-linear-border">
         No description available for this property.
       </p>
     );
@@ -80,11 +84,11 @@ const Description = () => {
   return (
     <>
       {currentPath && (
-        <h2 className="font-bold p-3 rounded-lg bg-gray-700 text-lime-400 ">
+        <h2 className="font-semibold text-lg p-4 bg-linear-gray border-b border-linear-border text-linear-text">
           {currentPath.replaceAll("_", " . ")}
         </h2>
       )}
-      {content}
+      <div className="p-4">{content}</div>
     </>
   );
 };

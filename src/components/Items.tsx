@@ -8,7 +8,7 @@ const Items = ({ items, title, item_id }) => {
 
   if (options.length < 1 || descriptions.length < 1) {
     return (
-      <h2 className="text-lime-500 text-lg p-2 text-center">Loading...</h2>
+      <h2 className="text-linear-accent text-lg p-4 text-center">Loading...</h2>
     );
   }
   items = items || options[active];
@@ -16,15 +16,17 @@ const Items = ({ items, title, item_id }) => {
     const itemType = typeof items[item];
     const id = `${item_id || active}_${item}`;
     let type;
-    itemType === "string"
-      ? (type = "text")
-      : itemType === "boolean"
-        ? (type = "checkbox")
-        : itemType === "number"
-          ? (type = "number")
-          : Array.isArray(items[item])
-            ? (type = "list")
-            : type === "null";
+    if (itemType === "string") {
+      type = "text";
+    } else if (itemType === "boolean") {
+      type = "checkbox";
+    } else if (itemType === "number") {
+      type = "number";
+    } else if (Array.isArray(items[item])) {
+      type = "list";
+    } else if (items[item] === null) {
+      type = "text"; // or some default type for null values
+    }
     if (!type) {
       return <Items items={items[item]} title={item} item_id={id} key={id} />;
     } else {
@@ -44,22 +46,16 @@ const Items = ({ items, title, item_id }) => {
   return (
     <>
       {!title && (
-        <h2 className="text-xl font-medium p-5 rounded-lg bg-slate-900 text-lime-500 hidden md:block ">
+        <h2 className="text-xl font-medium px-6 py-4 bg-linear-gray text-linear-text border-b border-linear-border hidden md:block">
           {toLabel(active)}
         </h2>
       )}
       {title && (
-        <h2
-          className=" my-1.5 mt-2 p-1 pl-2  font-[500]   
-        rounded-t-lg from-slate-900  shadow-slate-900  bg-gradient-to-r shadow-sm   text-lime-400
-        "
-        >
+        <h2 className="my-2 p-3 font-medium bg-linear-gray text-linear-text border-b border-linear-border">
           {toLabel(title)}
         </h2>
       )}
-      <ul className="pl-4 md:pl-6 shadow-slate-900 shadow-md  rounded-b-2xl  pb-2">
-        {itemList}
-      </ul>
+      <ul className="px-6 py-2 space-y-1">{itemList}</ul>
     </>
   );
 };
