@@ -73,16 +73,13 @@ function Generate() {
       </header>
       <Navigate />
       <div className="flex bg-black gap-3">
-        <aside className="h-screen sticky shadow-xl shadow-black hidden md:block top-0 my-3 bg-gray-900 p-5 overflow-y-auto w-1/5 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent border border-gray-700">
+        <aside className="sticky hidden md:block top-0 my-3 p-6 bg-gray-900/50 backdrop-blur-sm border-r border-gray-700/50">
           <KeyList />
         </aside>
-        <main
-          className="shadow-black shadow-2xl
-        md:p-10 p-2 md:w-2/5 w-full bg-gray-900 border border-gray-700 my-3 min-h-screen"
-        >
+        <main className="md:p-10 p-2 md:w-2/5 w-full my-3 min-h-screen">
           {error ? (
             <>
-              <h2 className="text-xl font-medium p-5 bg-gray-800 text-red-400 hidden md:block border border-gray-700">
+              <h2 className="text-xl font-medium p-5 text-red-400 hidden md:block">
                 ERROR
               </h2>
               <p className="text-slate-200 p-2">{error.message}</p>
@@ -91,7 +88,7 @@ function Generate() {
             <Items />
           )}
         </main>
-        <aside className="h-screen sticky top-0 p-5 shadow-black shadow-xl md:block hidden w-2/5 bg-gray-900 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent border border-gray-700 my-3">
+        <aside className="h-screen sticky top-0 p-5 md:block hidden w-2/5 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent my-3">
           <Description />
         </aside>
         <SideBar />
