@@ -7,6 +7,8 @@ import DescriptionButton from "./Description/DescriptionButton";
 import CopyButton from "./CopyButton";
 import useOptions from "../store/useOptions";
 import { optionActions } from "../store/options-ctx";
+import { NumberField } from "@base-ui/react/number-field";
+import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
 
 const Input = ({ type, label, value, id, isChecked, description }) => {
   const [copiedData, setCopiedData] = useState("");
@@ -36,6 +38,16 @@ const Input = ({ type, label, value, id, isChecked, description }) => {
     dispatch(
       optionActions.editOption({
         optionValue: inputValue,
+        optionKeys: id,
+      })
+    );
+  };
+
+  const handleNumberChange = (value) => {
+    setCopiedData(`!config ${id.replaceAll("_", ".")}=${value}`);
+    dispatch(
+      optionActions.editOption({
+        optionValue: value,
         optionKeys: id,
       })
     );
@@ -96,22 +108,59 @@ const Input = ({ type, label, value, id, isChecked, description }) => {
       )}
 
       {type !== "list" && !keyValue && (
-        <input
-          onChange={handleChange}
-          className={`
-          bg-linear-darker text-linear-text
-          border border-linear-border hover:border-linear-accent
-          px-3 py-2
-          placeholder:text-linear-text-secondary
-          focus:outline-none focus:border-linear-accent
-          transition-colors
-          ${type === "text" ? "flex-1 order-4 md:order-none" : ""}
-          `}
-          type={type}
-          defaultChecked={currentValue === undefined ? isChecked : currentValue}
-          id={id}
-          defaultValue={currentValue || value}
-        />
+        <>
+          {type === "number" ? (
+            <NumberField.Root
+              value={currentValue || value}
+              onValueChange={handleNumberChange}
+              className="flex-1 order-4 md:order-none"
+            >
+              <NumberField.Group
+                className="
+                  flex items-center
+                  bg-linear-darker text-linear-text
+                  border border-linear-border hover:border-linear-accent
+                  px-3 py-2
+                  placeholder:text-linear-text-secondary
+                  focus-within:outline-none focus-within:border-linear-accent
+                  transition-colors
+                "
+              >
+                <NumberField.Decrement className="flex items-center justify-center w-6 h-6 text-linear-text-secondary hover:text-linear-text hover:bg-linear-gray rounded transition-colors">
+                  <ChevronDownIcon className="h-4 w-4" />
+                </NumberField.Decrement>
+                <NumberField.Input
+                  className="
+                    flex-1 bg-transparent text-center
+                    focus:outline-none
+                  "
+                />
+                <NumberField.Increment className="flex items-center justify-center w-6 h-6 text-linear-text-secondary hover:text-linear-text hover:bg-linear-gray rounded transition-colors">
+                  <ChevronUpIcon className="h-4 w-4" />
+                </NumberField.Increment>
+              </NumberField.Group>
+            </NumberField.Root>
+          ) : (
+            <input
+              onChange={handleChange}
+              className={`
+                bg-linear-darker text-linear-text
+                border border-linear-border hover:border-linear-accent
+                px-3 py-2
+                placeholder:text-linear-text-secondary
+                focus:outline-none focus:border-linear-accent
+                transition-colors
+                ${type === "text" ? "flex-1 order-4 md:order-none" : ""}
+              `}
+              type={type}
+              defaultChecked={
+                currentValue === undefined ? isChecked : currentValue
+              }
+              id={id}
+              defaultValue={currentValue || value}
+            />
+          )}
+        </>
       )}
       {keyValue && (
         <Dropdown
