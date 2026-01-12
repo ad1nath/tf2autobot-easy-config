@@ -9,11 +9,9 @@ import Footer from "../components/Footer";
 
 function Index() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
-      <nav className="p-5    flex justify-between">
-        <h1 className=" text-slate-100 text-xl font-bold">
-          TF2Autobot EasyConfig
-        </h1>
+    <div className="min-h-screen bg-black text-white">
+      <nav className="p-5 flex justify-between">
+        <h1 className="text-white text-xl font-bold">TF2Autobot EasyConfig</h1>
       </nav>
       {/* Hero Section */}
       <header className="container mx-auto px-4 py-16">
@@ -28,7 +26,7 @@ function Index() {
           </p>
           <Link
             to="/generate"
-            className="bg-lime-500 hover:bg-lime-600 text-white px-8 py-3 rounded-lg max-w-fit font-semibold flex items-center gap-2 mx-auto transition-colors"
+            className="bg-white hover:bg-gray-200 text-black px-8 py-3 font-semibold flex items-center gap-2 mx-auto transition-colors"
           >
             Get Started
             <ArrowRightIcon className="w-5 h-5" />
@@ -71,8 +69,8 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <div className="bg-gray-800 p-6 rounded-lg text-center">
-      <div className="flex-shrink-0 w-8 h-8 bg-lime-600 rounded-full flex items-center justify-center font-bold">
+    <div className="bg-gray-900 p-6 text-center border border-gray-700">
+      <div className="flex-shrink-0 w-8 h-8 bg-white text-black flex items-center justify-center font-bold mb-4">
         {number}
       </div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>

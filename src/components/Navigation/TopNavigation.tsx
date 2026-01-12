@@ -45,9 +45,9 @@ const Navigate = () => {
     });
   };
   return (
-    <nav className="bg-slate-900 flex  justify-center text-white font-semibold py-2 align-center sticky top-0 md:hidden">
+    <nav className="bg-black flex justify-center text-white font-semibold py-2 align-center sticky top-0 md:hidden border-b border-gray-700">
       <button
-        className="p-2 hover:bg-slate-800 w-1/3 m-2 rounded-xl text-sm select:none"
+        className="p-2 hover:bg-gray-800 w-1/3 m-2 text-sm select-none border border-gray-600"
         onClick={handleLast}
       >
         {lastItem || "Jump to end"}
@@ -58,7 +58,7 @@ const Navigate = () => {
           onClick={() => {
             setShow((pre) => !pre);
           }}
-          className={`p-2 m-2 rounded-xl group text-sm text-center text-lime-500`}
+          className={`p-2 m-2 group text-sm text-center text-white border border-gray-600`}
         >
           {currentItem}
         </button>
@@ -66,9 +66,8 @@ const Navigate = () => {
           onClick={handleMiddle}
           className={`absolute ${
             show ? "visible" : "invisible"
-          }  p-2 bg-slate-700 h-52 overflow-y-auto border-lime-500 drop-shadow-md 
-        translate-x-1/2 z-10 right-1/2 scrollbar-thin scrollbar-thumb-slate-500 scrollbar-thumb-rounded-md scrollbar-track-transparent
-        rounded-lg`}
+          } p-2 bg-gray-800 h-52 overflow-y-auto border-white drop-shadow-md 
+        translate-x-1/2 z-10 right-1/2 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent border border-gray-600`}
         >
           {keyList.map((item, index) => (
             <li
@@ -85,7 +84,7 @@ const Navigate = () => {
       </div>
       <ChevronRightIcon className="h-5 w-5 self-center" />
       <button
-        className="p-2 hover:bg-slate-800 w-1/3 m-2 text-sm rounded-xl "
+        className="p-2 hover:bg-gray-800 w-1/3 m-2 text-sm border border-gray-600"
         onClick={handleNext}
       >
         {nextItem || "Jump to start"}

@@ -99,14 +99,14 @@ const Input = ({ type, label, value, id, isChecked, description }) => {
         <input
           onChange={handleChange}
           className={`
-          bg-slate-900 text-slate-200
+          bg-gray-800 text-white
           mx-1
-          rounded-md border-slate-500 border hover:outline-none outline-none
-          hover:border-lime-300 
+          border-gray-600 border hover:outline-none outline-none
+          hover:border-white 
           pl-2 py-0.5
           placeholder:italic
-          placeholder:text-slate-600
-          accent-lime-500
+          placeholder:text-gray-500
+          accent-white
           ${type === "text" ? "flex-1 order-4 md:order-none" : ""}
           `}
           type={type}

@@ -44,20 +44,16 @@ const Items = ({ items, title, item_id }) => {
   return (
     <>
       {!title && (
-        <h2 className="text-xl font-medium p-5 rounded-lg bg-slate-900 text-lime-500 hidden md:block ">
+        <h2 className="text-xl font-medium p-5 bg-gray-800 text-white hidden md:block border-b border-gray-600">
           {toLabel(active)}
         </h2>
       )}
       {title && (
-        <h2
-          className=" my-1.5 mt-2 p-1 pl-2  font-[500]   
-        rounded-t-lg from-slate-900  shadow-slate-900  bg-gradient-to-r shadow-sm   text-lime-400
-        "
-        >
+        <h2 className="my-1.5 mt-2 p-1 pl-2 font-[500] bg-gray-800 shadow-black shadow-sm text-white border-b border-gray-600">
           {toLabel(title)}
         </h2>
       )}
-      <ul className="pl-4 md:pl-6 shadow-slate-900 shadow-md  rounded-b-2xl  pb-2">
+      <ul className="pl-4 md:pl-6 shadow-black shadow-md pb-2 border border-gray-700">
         {itemList}
       </ul>
     </>

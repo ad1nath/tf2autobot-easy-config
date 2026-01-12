@@ -49,9 +49,9 @@ function Generate() {
 
   return (
     <>
-      <header className="p-5 bg-slate-900 flex justify-between">
+      <header className="p-5 bg-black flex justify-between">
         <Link to="/">
-          <h1 className=" text-slate-100 font-bold text-xl">
+          <h1 className="text-white font-bold text-xl">
             <span className="hidden sm:inline">TF2Autobot EasyConfig</span>
             <span className="sm:hidden">EZConfig</span>
           </h1>
@@ -72,20 +72,17 @@ function Generate() {
         </div>
       </header>
       <Navigate />
-      <div className="flex bg-slate-800 gap-3">
-        <aside
-          className="h-screen sticky  shadow-xl shadow-black hidden md:block top-0 my-3 bg-slate-800 p-5 overflow-y-auto w-1/5 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent scrollbar-thumb-rounded-xl 
-        rounded-lg"
-        >
+      <div className="flex bg-black gap-3">
+        <aside className="h-screen sticky shadow-xl shadow-black hidden md:block top-0 my-3 bg-gray-900 p-5 overflow-y-auto w-1/5 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent border border-gray-700">
           <KeyList />
         </aside>
         <main
-          className="  shadow-black shadow-2xl
-        md:p-10 p-2 md:w-2/5 w-full bg-slate-800 rounded-lg my-3 min-h-screen"
+          className="shadow-black shadow-2xl
+        md:p-10 p-2 md:w-2/5 w-full bg-gray-900 border border-gray-700 my-3 min-h-screen"
         >
           {error ? (
             <>
-              <h2 className="text-xl font-medium p-5 rounded-lg bg-slate-900 text-lime-500 hidden md:block ">
+              <h2 className="text-xl font-medium p-5 bg-gray-800 text-red-400 hidden md:block border border-gray-700">
                 ERROR
               </h2>
               <p className="text-slate-200 p-2">{error.message}</p>
@@ -94,10 +91,7 @@ function Generate() {
             <Items />
           )}
         </main>
-        <aside
-          className="h-screen sticky top-0 p-5 shadow-black shadow-xl  md:block hidden w-2/5 bg-slate-800  overflow-y-auto scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-slate-500 
-        rounded-lg my-3"
-        >
+        <aside className="h-screen sticky top-0 p-5 shadow-black shadow-xl md:block hidden w-2/5 bg-gray-900 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent border border-gray-700 my-3">
           <Description />
         </aside>
         <SideBar />

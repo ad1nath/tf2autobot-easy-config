@@ -6,11 +6,11 @@ const Key = ({ name }: { name: string }) => {
   return (
     <li
       id={name}
-      className={`rounded-md px-5 py-0.5 hover:ng hover:shadow-lg  shadow-slate-900 hover:cursor-pointer  font-bold
+      className={`px-5 py-0.5 hover:shadow-lg shadow-black hover:cursor-pointer font-bold border-b border-gray-700
        ${
          active === name
-           ? "bg-slate-900 text-lime-400 hover:bg-slate-900"
-           : "hover:bg-slate-700 text-slate-200"
+           ? "bg-gray-800 text-white hover:bg-gray-800"
+           : "hover:bg-gray-700 text-gray-300"
        } `}
     >
       {toLabel(name)}
