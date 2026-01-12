@@ -21,7 +21,7 @@ export interface OptionState {
 const initialState: OptionState = {
   options: [],
   editedOptions: [],
-  activeItem: "miscSettings",
+  activeItem: "globalDisable",
   currentPath: "",
   currentDescription: undefined,
   descriptions: [],
