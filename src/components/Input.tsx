@@ -111,8 +111,8 @@ const Input = ({ type, label, value, id, isChecked, description }) => {
         <>
           {type === "number" ? (
             <NumberField.Root
-              value={currentValue || value}
-              onValueChange={handleNumberChange}
+              defaultValue={currentValue || value}
+              onValueCommitted={handleNumberChange}
               className="flex-1 order-4 md:order-none"
             >
               <NumberField.Group
