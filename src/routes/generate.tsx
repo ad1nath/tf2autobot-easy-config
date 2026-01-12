@@ -73,14 +73,14 @@ function Generate() {
       </header>
       <Navigate />
       <div className="flex bg-linear-dark min-h-screen">
-        <aside className="w-64 bg-linear-darker border-r border-linear-border hidden md:block">
+        <aside className="w-64 bg-linear-darker border-r border-linear-border hidden md:block flex-shrink-0">
           <div className="sticky top-0 h-screen overflow-y-auto">
             <div className="p-4">
               <KeyList />
             </div>
           </div>
         </aside>
-        <main className="flex-1 px-8 py-6 max-w-4xl">
+        <main className="flex-1 px-8 py-6 min-w-0">
           {error ? (
             <>
               <h2 className="text-xl font-medium text-red-400 mb-4">ERROR</h2>
@@ -90,7 +90,7 @@ function Generate() {
             <Items />
           )}
         </main>
-        <aside className="w-80 bg-linear-darker border-l border-linear-border hidden lg:block">
+        <aside className="w-96 bg-linear-darker border-l border-linear-border hidden lg:block flex-shrink-0">
           <div className="sticky top-0 h-screen overflow-y-auto p-6">
             <Description />
           </div>
